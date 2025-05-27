@@ -1,23 +1,21 @@
+import React, { useEffect } from 'react'; // <- Nhớ import useEffect
 import logo from './logo.svg';
+import 'aos/dist/aos.css';
 import './App.css';
+import Carousel from './component/wedding_index';
+import InvitationForm from './component/invitationForm';
+import AOS from 'aos';
 
 function App() {
+  useEffect(() => {
+  AOS.init({
+    once: true, // chỉ chạy 1 lần
+  });
+}, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Carousel/>
+      <InvitationForm/>
     </div>
   );
 }
