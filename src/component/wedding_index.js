@@ -1,20 +1,17 @@
 import React, { useEffect, useRef } from 'react';
-import Slider from 'react-slick';
+
 import 'slick-carousel/slick/slick.css';
 import AOS from 'aos';
 import 'slick-carousel/slick/slick-theme.css';
-import { motion } from 'framer-motion';
+
 import wedding4 from '../assets/images/image4.jpg';
-import wedding2 from '../assets/images/image2.jpg';
-import wedding3 from '../assets/images/image3.jpg';
+
 import backgournd from '../assets/images/backgournd.jpg';
 import codau from '../assets/images/codau.jpg';
 import chure from '../assets/images/chure.jpg';
-import { image } from 'framer-motion/client';
+
 
 function Carousel() {
-  const containerRef = useRef(null);
-  const snowContainerRef = useRef(null);
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
     // Tạo bông tuyết

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'; // <- Nhớ import useEffect
-import logo from './logo.svg';
 import 'aos/dist/aos.css';
 import './App.css';
 import Carousel from './component/wedding_index';
