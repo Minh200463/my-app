@@ -30,11 +30,11 @@ function Carousel() {
     }
 
     // Tạo bông tuyết liên tục
-    // setInterval(createSnowflake, 800); // Tạo bông tuyết mỗi 200ms
+    setInterval(createSnowflake, 800); // Tạo bông tuyết mỗi 200ms
 
     // Ngẫu nhiên thêm số lượng ban đầu
     for (let i = 0; i < 10; i++) {
-      // createSnowflake();
+      createSnowflake();  
     }
   }, []);
 
