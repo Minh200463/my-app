@@ -30,11 +30,11 @@ function Carousel() {
     }
 
     // Tạo bông tuyết liên tục
-    setInterval(createSnowflake, 800); // Tạo bông tuyết mỗi 200ms
+    // setInterval(createSnowflake, 800); // Tạo bông tuyết mỗi 200ms
 
     // Ngẫu nhiên thêm số lượng ban đầu
     for (let i = 0; i < 10; i++) {
-      createSnowflake();
+      // createSnowflake();
     }
   }, []);
 
@@ -43,7 +43,7 @@ function Carousel() {
       {/* Snow container tách biệt để phủ toàn màn hình */}
       <div className="snow-container fixed top-0 left-0 w-full h-full pointer-events-none z-50"></div>
 
-      <div className="min-h-screen bg-gradient-to-b from-pink-100 to-rose-100 relative">
+      <div className="min-h-screen bg-gradient-to-b from-pink-100 to-rose-100 w-full overflow-x-hidden relative">
         <div
           className="min-h-screen bg-cover bg-center relative z-10"
           style={{
@@ -195,8 +195,8 @@ function Carousel() {
               }}
             ></span>
           </div>
-          <h1 className='font_thumoi2 mt-3' style={{ fontSize: '2.2em' }}>Thư Mời</h1>
-          <span className='font_lecuoi'>THAM DỰ LỄ CƯỚI CỦA LY & TÂM</span>
+          <h1 className='font_thumoi2 mt-3 text-white ' style={{ fontSize: '2.2em' }}>Thư Mời</h1>
+          <span className='font_lecuoi text-white'>THAM DỰ LỄ CƯỚI CỦA LY & TÂM</span>
         </div>
 
         <div

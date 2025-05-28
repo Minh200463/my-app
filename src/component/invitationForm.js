@@ -40,7 +40,7 @@ const InvitationForm = () => {
       quantity: parseInt(formData.quantity), // Chuyển thành int
     };
     try {
-      const response = await axios.post('http://localhost:8080/api/guest', submitData);
+      const response = await axios.post('http://backendwedding-gnhaf5a9fse4czhh.eastus2-01.azurewebsites.net/api/guest', submitData);
       setMessage(response.data);
       setTimeout(() => {
         setMessage('');
