@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 import 'slick-carousel/slick/slick.css';
 import AOS from 'aos';
