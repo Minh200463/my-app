@@ -1,8 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import 'slick-carousel/slick/slick.css';
 import AOS from 'aos';
-import 'slick-carousel/slick/slick-theme.css';
 
 import wedding4 from '../assets/images/image4.jpg';
 
@@ -302,13 +300,13 @@ function Carousel() {
 
           <div className="row mt-3 d-flex justify-content-center text-center">
             <div className="col-4 align-content-around">
-              <img src={wedding3} alt="Wedding 3" loading="lazy" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800" />
+              <img src={wedding3} alt="Wedding 3" loading="lazy" data-aos="fade-right" data-aos-delay="400" data-aos-duration="800" />
             </div>
             <div className="col-4 p-0">
-              <img src={wedding1} alt="Wedding 1" className="mx-auto d-block" loading="lazy" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800" />
+              <img src={wedding1} alt="Wedding 1" className="mx-auto d-block" loading="lazy" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="800" />
             </div>
             <div className="col-4 align-content-around">
-              <img src={wedding2} alt="Wedding 2" loading="lazy" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800" />
+              <img src={wedding2} alt="Wedding 2" loading="lazy" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800" />
             </div>
           </div>
         </div>
