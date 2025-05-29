@@ -21,12 +21,12 @@ function Carousel() {
 
     // Tạo bông tuyết động
     const snowContainer = document.querySelector('.snow-container');
-    const snowCount = 15; // Số lượng bông tuyết
+    const snowCount = 30; // Số lượng bông tuyết
     for (let i = 0; i < snowCount; i++) {
       const snowflake = document.createElement('div');
       snowflake.className = 'snowflake';
       snowflake.style.left = `${Math.random() * 100}vw`;
-      snowflake.style.animationDelay = `${Math.random() * 5}s`;
+      snowflake.style.animationDelay = `${Math.random() * 17}s`;
       snowflake.style.animationDuration = `${5 + Math.random() * 5}s`;
       snowflake.style.opacity = `${0.5 + Math.random() * 0.5}`;
       snowContainer.appendChild(snowflake);
@@ -216,15 +216,20 @@ function Carousel() {
 
           <div className='row mt-3 d-flex justify-content-center text-center'>
             <div className='col-4 align-content-around'>
-              <img src={wedding3} loading="lazy" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1200"/>
+              <img src={wedding3} loading="lazy" alt='imagewwedding' data-aos="fade-right" data-aos-delay="300" data-aos-duration="1200"/>
             </div>
             <div className='col-4 p-0'>
-               <img src={wedding1} loading="lazy" data-aos="fade" data-aos-delay="300" data-aos-duration="1000"/>
+               <img src={wedding1} loading="lazy" alt='imagewwedding' data-aos="fade" data-aos-delay="300" data-aos-duration="1000"/>
             </div>
             <div className='col-4 align-content-around'>
-               <img src={wedding2} loading="lazy" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1200"/>
+               <img src={wedding2} loading="lazy" alt='imagewwedding' data-aos="fade-left" data-aos-delay="300" data-aos-duration="1200"/>
             </div>
           
+          </div>
+
+          <div className='text-center'>
+            <h1>TIỆC MỪNG LỄ VU QUY</h1>
+            <span>vào lúc 11h00 | CHỦ NHẬT</span>
           </div>
         </div>
 
