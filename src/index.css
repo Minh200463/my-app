@@ -34,39 +34,97 @@ code {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vh;
+  width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 50; /* Đảm bảo bông tuyết hiển thị phía trên tất cả */
+  z-index: 50;
 }
 
 .snowflake {
   position: absolute;
-  top: -10px;
-  width: 3px;
-  height: 3px;
+  width: 4px;
+  height: 4px;
   background: white;
   border-radius: 50%;
-  will-change: transform;
-  animation: fall linear forwards;
+  animation: fall linear infinite;
 }
 
 @keyframes fall {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(100vh); }
+  0% {
+    transform: translateY(-100vh) translateX(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) translateX(20px);
+    opacity: 0;
+  }
 }
 
-@keyframes fadeInBg {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+.snowflake:nth-child(odd) {
+  animation-duration: 7s;
+}
+.snowflake:nth-child(even) {
+  animation-duration: 5s;
 }
 
-@keyframes slideLeft {
-  0% { opacity: 0; transform: translateX(100%); }
-  100% { opacity: 1; transform: translateX(0); }
+/* Animation cho các phần tử */
+.animate {
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-@keyframes slideRight {
-  0% { opacity: 0; transform: translateX(-100%); }
-  100% { opacity: 1; transform: translateX(0); }
+.animate.is-visible {
+  opacity: 1;
+}
+
+.animate[data-animate="fade"] {
+  transform: translateY(0);
+}
+
+.animate[data-animate="fade-up"] {
+  transform: translateY(20px);
+}
+.animate.is-visible[data-animate="fade-up"] {
+  transform: translateY(0);
+}
+
+.animate[data-animate="fade-right"] {
+  transform: translateX(-20px);
+}
+.animate.is-visible[data-animate="fade-right"] {
+  transform: translateX(0);
+}
+
+.animate[data-animate="fade-left"] {
+  transform: translateX(20px);
+}
+.animate.is-visible[data-animate="fade-left"] {
+  transform: translateX(0);
+}
+
+.animate[data-animate="fade-in"] {
+  transform: scale(0.8);
+}
+.animate.is-visible[data-animate="fade-in"] {
+  transform: scale(1);
+}
+
+/* Áp dụng độ trễ animation */
+.animate[data-delay="0.1s"] {
+  transition-delay: 0.1s;
+}
+.animate[data-delay="0.2s"] {
+  transition-delay: 0.2s;
+}
+.animate[data-delay="0.3s"] {
+  transition-delay: 0.3s;
+}
+.animate[data-delay="0.4s"] {
+  transition-delay: 0.4s;
+}
+.animate[data-delay="0.6s"] {
+  transition-delay: 0.6s;
+}
+.animate[data-delay="0.8s"] {
+  transition-delay: 0.8s;
 }
