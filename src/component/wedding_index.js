@@ -182,7 +182,7 @@ function Carousel() {
                         className="img-fluid shadow"
                         data-aos="fade-right"
                         data-aos-delay="300"
-                        data-aos-duration="2000"
+                        data-aos-duration="1500"
                       />
                     </div>
                     <div className='col-6'>
@@ -192,7 +192,7 @@ function Carousel() {
                         className="img-fluid shadow"
                         data-aos="fade-left"
                         data-aos-delay="300"
-                        data-aos-duration="2000"
+                        data-aos-duration="1500"
                       />
                     </div>
                   </div>
@@ -216,13 +216,13 @@ function Carousel() {
 
           <div className='row mt-3 d-flex justify-content-center text-center'>
             <div className='col-4 align-content-around'>
-              <img src={wedding3} loading="lazy" alt='imagewwedding' data-aos="fade-right" data-aos-delay="300" data-aos-duration="1200"/>
+              <img src={wedding3} loading="lazy" alt='imagewwedding' data-aos="fade-right" data-aos-delay="300" data-aos-duration="700"/>
             </div>
             <div className='col-4 p-0'>
-               <img src={wedding1} loading="lazy" alt='imagewwedding' data-aos="fade" data-aos-delay="300" data-aos-duration="1000"/>
+               <img src={wedding1} loading="lazy" alt='imagewwedding' data-aos="fade" data-aos-delay="300" data-aos-duration="500"/>
             </div>
             <div className='col-4 align-content-around'>
-               <img src={wedding2} loading="lazy" alt='imagewwedding' data-aos="fade-left" data-aos-delay="300" data-aos-duration="1200"/>
+               <img src={wedding2} loading="lazy" alt='imagewwedding' data-aos="fade-left" data-aos-delay="300" data-aos-duration="700"/>
             </div>
           
           </div>
