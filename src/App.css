@@ -73,3 +73,7 @@
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+.image_size{
+  max-width: 130px;
+}

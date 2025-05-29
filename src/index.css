@@ -42,20 +42,18 @@ code {
 
 .snowflake {
   position: absolute;
-  width: 5px;
-  height: 5px;
+  top: -10px;
+  width: 3px;
+  height: 3px;
   background: white;
   border-radius: 50%;
-  animation: fall linear infinite;
-  z-index: 50; /* Đảm bảo mỗi bông tuyết có z-index cao */
+  will-change: transform;
+  animation: fall linear forwards;
 }
+
 @keyframes fall {
-  0% {
-    transform: translateY(-100vh);
-  }
-  100% {
-    transform: translateY(100vh);
-  }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
 }
 
 @keyframes fadeInBg {
