@@ -132,79 +132,187 @@ code {
 
 
 .calendar-container {
-            background-color: white;
-            padding: 20px;
-            border: 1px solid #ddd;
-            width: 400px;
-            display: flex;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .left-section {
-            width: 35%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding-right: 10px;
-            border-right: 1px solid #ddd;
-        }
-        .right-section {
-            width: 65%;
-            padding-left: 10px;
-            text-align: center;
-        }
-        .title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5em;
-            color: #000;
-            margin: 0;
-            line-height: 1;
-        }
-        .couple-info {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1em;
-            color: #000;
-            margin: 10px 0;
-        }
-        .date-info {
-            font-size: 0.9em;
-            color: #000;
-            margin: 5px 0;
-            text-transform: uppercase;
-        }
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 2px;
-            font-size: 0.8em;
-            color: #000;
-        }
-        .calendar-grid div {
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            text-align: center;
-        }
-        .calendar-grid .day-name {
-            font-weight: bold;
-            color: #000;
-        }
-        .calendar-grid .highlight {
-            background-color: #ff0000;
-            color: white;
-            border-radius: 50%;
-            font-weight: bold;
-        }
-        .follow-note {
-            font-family: 'Dancing Script', cursive;
-            font-size: 0.9em;
-            color: #000;
-            margin-top: 10px;
-        }
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+}
 
+.left-section {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+    border-right: 1px solid #ddd;
+}
+
+.right-section {
+    width: 65%;
+    padding-left: 15px;
+    text-align: center;
+}
+
+
+
+.date-info {
+    font-size: 1rem;
+    color: #000;
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    font-size: 0.9rem;
+    color: #000;
+    margin: 10px 0;
+}
+
+.calendar-grid div {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.calendar-grid .day-name {
+    font-weight: bold;
+    color: #000;
+    background-color: #f8f9fa;
+}
+
+.calendar-grid .highlight {
+    background-color: #ff0000;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.follow-note {
+    font-family: 'Mea Culpa', cursive;
+    font-size: 1rem;
+    color: #000;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .calendar-container {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        flex-direction: row; /* Giữ hai cột */
+    }
+    .left-section {
+        width: 40%; /* Tăng tỷ lệ một chút trên màn hình nhỏ */
+        padding-right: 10px;
+    }
+    .right-section {
+        width: 60%;
+        padding-left: 10px;
+    }
+    .title {
+        font-size: 1.8rem; /* Giảm kích thước font trên màn hình nhỏ */
+    }
+    .title-middle {
+        font-size: 1rem;
+    }
+    .couple-info h1 {
+        font-size: 1.2rem;
+    }
+    .couple-info .underline {
+        font-size: 0.9rem;
+    }
+    .date-info {
+        font-size: 0.8rem;
+    }
+    .calendar-grid {
+        font-size: 0.7rem;
+    }
+    .calendar-grid div {
+        height: 30px;
+        line-height: 30px;
+    }
+    .follow-note {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .left-section {
+        width: 35%; /* Tăng tỷ lệ thêm trên màn hình rất nhỏ */
+        padding-right: 5px;
+    }
+    .right-section {
+        width: 65%;
+        padding-left: 10px;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .title-middle {
+        font-size: 0.8rem;
+    }
+    .couple-info h1 {
+        font-size: 1rem;
+    }
+    .couple-info .underline {
+        font-size: 0.8rem;
+    }
+    .calendar-grid {
+        font-size: 0.6rem;
+    }
+    .calendar-grid div {
+        height: 25px;
+        line-height: 25px;
+    }
+}
 
 .underline {
     border-bottom: 1px solid black;
     display: inline-block;
     padding-bottom: 2px;
 }
+
+
+
+        .map-address {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .map-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .map-link:hover {
+            background-color: #e65b50;
+        }
+        @media (max-width: 768px) {
+            .map-container {
+                max-width: 100%;
+                padding: 10px;
+            }
+            .map-title {
+                font-size: 1.5rem;
+            }
+            .map-address {
+                font-size: 0.9rem;
+            }
+            .map-link {
+                padding: 8px 15px;
+            }
+        }

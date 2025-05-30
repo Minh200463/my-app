@@ -10,6 +10,12 @@ import wedding3 from '../assets/images/wedding-3.jpg';
 
 
 function Carousel() {
+  
+  const directionLink = "https://maps.app.goo.gl/dsY7U99mTDDKaRUx8";
+
+  const handleOpenMap = () => {
+    window.open(directionLink, '_blank');
+  };
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -278,15 +284,15 @@ function Carousel() {
 
 
 
-          <div class='calendar-container'>
-            <div class='left-section'>
+          <div className='calendar-container'>
+            <div className='left-section'>
               <h1 className='title'>Save</h1>
-              <span>the</span>
+              <span className='title-middle'>the</span>
               <h1 className='title'>Date</h1>
             </div>
             <div className='right-section'>
               <div className='couple-info'>
-                <h1>Tâm & Ly </h1>
+                <h1>Tâm & Ly</h1>
                 <p className='underline'>ARE GETTING MARRIED!</p>
               </div>
               <div className='date-info'>June 2025</div>
@@ -306,6 +312,28 @@ function Carousel() {
               </div>
               <div className='follow-note'>formal invitation to follow</div>
             </div>
+          </div>
+
+
+
+          <div>Địa điểm tổ chức</div>
+          <div class="map-container">
+            <p class="map-address">123 Wedding Road, Ho Chi Minh City, Vietnam</p>
+              <button
+        onClick={handleOpenMap}
+        style={{
+          marginTop: '10px',
+          padding: '10px 20px',
+          backgroundColor: '#007bff',
+          color: 'white',
+          border: 'none',
+          borderRadius: '5px',
+          cursor: 'pointer',
+        }}
+      >
+        Xem đường đi
+      </button>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.2266760293032!2d108.10078709678956!3d15.579533300000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3169f9004af3c39d%3A0x54da01d2d65995b!2zTmjDoCBow6BuZyBLw6wgSMawxqFuZw!5e0!3m2!1svi!2s!4v1748626215262!5m2!1svi!2s" width='100%' height='450' style={{ border: 0 }} allowFullScreen='' loading='lazy' referrerPolicy='no-referrer-when-downgrade' title='đường đi'></iframe>
           </div>
         </div>
 
