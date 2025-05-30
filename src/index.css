@@ -128,3 +128,83 @@ code {
 .animate[data-delay="0.8s"] {
   transition-delay: 0.8s;
 }
+
+
+
+.calendar-container {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            width: 400px;
+            display: flex;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .left-section {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-right: 10px;
+            border-right: 1px solid #ddd;
+        }
+        .right-section {
+            width: 65%;
+            padding-left: 10px;
+            text-align: center;
+        }
+        .title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            color: #000;
+            margin: 0;
+            line-height: 1;
+        }
+        .couple-info {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1em;
+            color: #000;
+            margin: 10px 0;
+        }
+        .date-info {
+            font-size: 0.9em;
+            color: #000;
+            margin: 5px 0;
+            text-transform: uppercase;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2px;
+            font-size: 0.8em;
+            color: #000;
+        }
+        .calendar-grid div {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        .calendar-grid .day-name {
+            font-weight: bold;
+            color: #000;
+        }
+        .calendar-grid .highlight {
+            background-color: #ff0000;
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+        .follow-note {
+            font-family: 'Dancing Script', cursive;
+            font-size: 0.9em;
+            color: #000;
+            margin-top: 10px;
+        }
+
+
+.underline {
+    border-bottom: 1px solid black;
+    display: inline-block;
+    padding-bottom: 2px;
+}

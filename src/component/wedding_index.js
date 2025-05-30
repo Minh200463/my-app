@@ -65,7 +65,7 @@ function Carousel() {
     };
   }, []);
   return (
-     <div className="relative">
+    <div className="relative">
       <div className="snow-container"></div>
 
       <div className="min-h-screen bg-gradient-to-b from-pink-100 to-rose-100 w-full overflow-x-hidden relative">
@@ -260,6 +260,51 @@ function Carousel() {
                 data-animate="fade-left"
                 data-delay="1s"
               />
+            </div>
+          </div>
+
+          <h1 className='text-center'>TIỆC MỪNG LỄ VU QUY</h1>
+          <div >
+            <span>Vào lúc <b>11h00 | CHỦ NHẬT</b></span>
+            <div className="date-form d-flex justify-content-around align-content-center">
+              <span className="label">Tháng 6</span>
+              <span className="pipe">|</span>
+              22
+              <span className="pipe">|</span>
+              2025
+            </div>
+            <i>(Tức ngày 22 tháng 6 năm Giáp Ngọ)</i>
+          </div>
+
+
+
+          <div class='calendar-container'>
+            <div class='left-section'>
+              <h1 className='title'>Save</h1>
+              <span>the</span>
+              <h1 className='title'>Date</h1>
+            </div>
+            <div className='right-section'>
+              <div className='couple-info'>
+                <h1>Tâm & Ly </h1>
+                <p className='underline'>ARE GETTING MARRIED!</p>
+              </div>
+              <div className='date-info'>June 2025</div>
+              <div className='calendar-grid'>
+                <div className='day-name'>Sun</div>
+                <div className='day-name'>Mon</div>
+                <div className='day-name'>Tue</div>
+                <div className='day-name'>Wed</div>
+                <div className='day-name'>Thu</div>
+                <div className='day-name'>Fri</div>
+                <div className='day-name'>Sat</div>
+                <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
+                <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
+                <div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div>
+                <div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
+                <div>29</div><div>30</div>
+              </div>
+              <div className='follow-note'>formal invitation to follow</div>
             </div>
           </div>
         </div>
