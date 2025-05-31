@@ -363,7 +363,7 @@ function Carousel() {
         />
     </div>
     {/* Cột bên phải: banner1 và banner2 */}
-    <div className='flex flex-col gap-2'>
+    <div className='flex flex-col gap-2 '>
         <img
             src={banner1}
             alt="Wedding Photo 7"
