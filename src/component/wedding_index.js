@@ -7,6 +7,8 @@ import chure from '../assets/images/chure.jpg';
 import wedding1 from '../assets/images/wedding-1.jpg';
 import wedding2 from '../assets/images/wedding-2.jpg';
 import wedding3 from '../assets/images/wedding-3.jpg';
+import banner1 from '../assets/images/banner1.jpg';
+import banner2 from '../assets/images/banner2.jpg';
 
 
 function Carousel() {
@@ -316,9 +318,10 @@ function Carousel() {
 
 
 
-          <div>Địa điểm tổ chức</div>
           <div class="map-container">
+          <div>Địa điểm tổ chức</div>
             <p class="map-address">123 Wedding Road, Ho Chi Minh City, Vietnam</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.2266760293032!2d108.10078709678956!3d15.579533300000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3169f9004af3c39d%3A0x54da01d2d65995b!2zTmjDoCBow6BuZyBLw6wgSMawxqFuZw!5e0!3m2!1svi!2s!4v1748626215262!5m2!1svi!2s" width='100%' height='450' style={{ border: 0 }} allowFullScreen='' loading='lazy' referrerPolicy='no-referrer-when-downgrade' title='đường đi'></iframe>
               <button
         onClick={handleOpenMap}
         style={{
@@ -333,9 +336,50 @@ function Carousel() {
       >
         Xem đường đi
       </button>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.2266760293032!2d108.10078709678956!3d15.579533300000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3169f9004af3c39d%3A0x54da01d2d65995b!2zTmjDoCBow6BuZyBLw6wgSMawxqFuZw!5e0!3m2!1svi!2s!4v1748626215262!5m2!1svi!2s" width='100%' height='450' style={{ border: 0 }} allowFullScreen='' loading='lazy' referrerPolicy='no-referrer-when-downgrade' title='đường đi'></iframe>
           </div>
+
+        <div className='album-wedding'>
+          <span>Ablum ảnh cưới</span><span>---------</span>
+        
+<div className='album-wedding container mx-auto p-4'>
+        <h2 class="text-3xl font-great-vibes text-center text-gray-800 mb-6">Wedding Memories</h2>
+        <div className='grid grid-cols-2 gap-2'>
+            <img src={wedding1} alt="Wedding Photo 1" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'/>
+            <img src={wedding1} alt='Wedding Photo 2' className='w-full h-auto object-cover rounded-lg transform -translate-y-2'/>
         </div>
+        <div className='grid grid-cols-3 gap-2'>
+            <img src={wedding1} alt='Wedding Photo 3' className='w-full h-auto object-cover rounded-lg translate-y-2'/>
+            <img src={wedding1} alt='Wedding Photo 4' className='w-full h-auto object-cover rounded-lg -translate-y-1'/>
+            <img src={wedding1} alt='Wedding Photo 6' className='w-full h-auto object-cover rounded-lg translate-y-2'/>
+            
+        </div>
+       <div className="grid grid-cols-2">
+    {/* Cột bên trái: wedding1 */}
+    <div className="row-span-2">
+        <img
+            src={wedding1}
+            alt="Wedding Photo 5" style={{width:'90%'}}
+            className=' h-auto object-cover rounded-lg translate-y-4'
+        />
+    </div>
+    {/* Cột bên phải: banner1 và banner2 */}
+    <div className='flex flex-col gap-2'>
+        <img
+            src={banner1}
+            alt="Wedding Photo 7"
+            className='h-auto object-cover rounded-lg translate-y-4'
+        />
+        <img
+            src={banner2}
+            alt="Wedding Photo 8" 
+            className=' h-auto object-cover rounded-lg translate-y-4'
+        />
+    </div>
+</div>
+    </div>
+        </div>
+        </div>
+        
 
         <div className="min-h-screen flex flex-col justify-center items-center text-center p-4 z-10 relative">
           <h2
