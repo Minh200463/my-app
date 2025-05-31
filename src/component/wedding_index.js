@@ -9,6 +9,7 @@ import wedding2 from '../assets/images/wedding-2.jpg';
 import wedding3 from '../assets/images/wedding-3.jpg';
 import banner1 from '../assets/images/banner1.jpg';
 import banner2 from '../assets/images/banner2.jpg';
+import { motion } from 'framer-motion'
 
 
 function Carousel() {
@@ -18,9 +19,21 @@ function Carousel() {
   const handleOpenMap = () => {
     window.open(directionLink, '_blank');
   };
+  const floatAnimation = {
+        float: {
+            y: [0, -10, 0], // Di chuyển lên xuống (từ 0 đến -10px rồi về 0)
+            transition: {
+                duration: 2, // Thời gian một chu kỳ animation
+                repeat: Infinity, // Lặp lại vô hạn
+                ease: 'easeInOut', // Hiệu ứng mượt mà
+            },
+        },
+    };
   const containerRef = useRef(null);
+  
 
   useEffect(() => {
+    
     // Tạo bông tuyết động
     const snowContainer = document.querySelector('.snow-container');
     const snowCount = 10; // Giảm số bông tuyết để nhẹ hơn
@@ -344,7 +357,7 @@ function Carousel() {
             <div className='album-wedding container mx-auto p-4'>
               <h2 class="text-3xl font-great-vibes text-center text-gray-800 mb-6">Wedding Memories</h2>
               <div className='grid grid-cols-2 gap-2'>
-                <img src={wedding1} alt="Wedding 1" className='w-full h-auto object-cover rounded-lg transform -translate-y-2' />
+                <motion.img src={wedding1} alt="Wedding 1" variants={floatAnimation} animate="float" className='w-full h-auto object-co  ver rounded-lg transform -translate-y-2' />
                 <img src={wedding1} alt='Wedding 2' className='w-full h-auto object-cover rounded-lg transform -translate-y-2' />
               </div>
               <div className='grid grid-cols-3 gap-2'>
