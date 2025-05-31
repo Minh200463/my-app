@@ -72,7 +72,10 @@ code {
   opacity: 0;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
+.animate2 {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.4s ease;
+}
 .animate.is-visible {
   opacity: 1;
 }
@@ -318,3 +321,49 @@ code {
             
         }
 
+
+
+
+        .blurred-bg {
+        background-image: url('assets/images/banner2.jpg');
+        background-size: cover;
+        background-position: center;
+        filter: blur(5px);
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+    .content-overlay {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+    .modal-content {
+        background-color: white;
+        margin: 15% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+    }
+    .modal-open {
+        overflow: hidden; /* Ngăn cuộn trang khi modal mở */
+    }
+
+    

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import wedding4 from '../assets/images/image4.jpg';
 import backgournd from '../assets/images/backgournd.jpg';
@@ -10,9 +10,24 @@ import wedding3 from '../assets/images/wedding-3.jpg';
 import banner1 from '../assets/images/banner1.jpg';
 import banner2 from '../assets/images/banner2.jpg';
 import { motion } from 'framer-motion'
+import InvitationForm from './invitationForm';
 
 
 function Carousel() {
+const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Hàm mở và đóng modal
+    const openModal = () => {
+        setIsModalOpen(true);
+        // Khóa cuộn khi modal mở
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        // Mở lại cuộn khi modal đóng
+        document.body.style.overflow = 'auto';
+    };
 
   const directionLink = "https://maps.app.goo.gl/dsY7U99mTDDKaRUx8";
 
@@ -20,20 +35,20 @@ function Carousel() {
     window.open(directionLink, '_blank');
   };
   const floatAnimation = {
-        float: {
-            y: [0, -10, 0], // Di chuyển lên xuống (từ 0 đến -10px rồi về 0)
-            transition: {
-                duration: 2, // Thời gian một chu kỳ animation
-                repeat: Infinity, // Lặp lại vô hạn
-                ease: 'easeInOut', // Hiệu ứng mượt mà
-            },
-        },
-    };
+    float: {
+      y: [0, -10, 0], // Di chuyển lên xuống (từ 0 đến -10px rồi về 0)
+      transition: {
+        duration: 2, // Thời gian một chu kỳ animation
+        repeat: Infinity, // Lặp lại vô hạn
+        ease: 'easeInOut', // Hiệu ứng mượt mà
+      },
+    },
+  };
   const containerRef = useRef(null);
-  
+
 
   useEffect(() => {
-    
+
     // Tạo bông tuyết động
     const snowContainer = document.querySelector('.snow-container');
     const snowCount = 10; // Giảm số bông tuyết để nhẹ hơn
@@ -357,8 +372,13 @@ function Carousel() {
             <div className='album-wedding container mx-auto p-4'>
               <h2 class="text-3xl font-great-vibes text-center text-gray-800 mb-6">Wedding Memories</h2>
               <div className='grid grid-cols-2 gap-2'>
-                <motion.img src={wedding1} alt="Wedding 1" variants={floatAnimation} animate="float" className='w-full h-auto object-co  ver rounded-lg transform -translate-y-2' />
-                <img src={wedding1} alt='Wedding 2' className='w-full h-auto object-cover rounded-lg transform -translate-y-2' />
+                <motion.img src={wedding1} alt="Wedding 1" variants={floatAnimation} animate="float" className='w-full h-auto object-co  ver rounded-lg transform -translate-y-2 animate'
+                  data-animate="fade-right"
+                  data-delay="1s" />
+                  <motion.img src={wedding2} alt="Wedding 2" variants={floatAnimation} animate="float" className='w-full h-auto object-co  ver rounded-lg transform -translate-y-2 animate'
+                  data-animate="fade-left"
+                  data-delay="1s" />
+                {/* <img src={wedding1} alt='Wedding 2' className='w-full h-auto object-cover rounded-lg transform -translate-y-2' /> */}
               </div>
               <div className='grid grid-cols-3 gap-2'>
                 <img src={wedding1} alt='Wedding 3' className='w-full h-auto object-cover rounded-lg translate-y-2' />
@@ -392,23 +412,40 @@ function Carousel() {
           </div>
         </div>
 
-
-        <div className="min-h-screen flex flex-col justify-center items-center text-center p-4 z-10 relative">
-          <h2
-            className="text-2xl font-bold text-pink-600 mb-4 animate"
-            data-animate="fade-up"
-            data-delay="0.1s"
-          >
-            Xác Nhận Tham Dự
-          </h2>
-          <button
-            className="bg-pink-500 text-white px-6 py-3 rounded-full hover:scale-105 transition-transform animate"
-            data-animate="fade"
-            data-delay="0.2s"
-            onClick={() => alert('Cảm ơn bạn đã xác nhận tham dự!')}
-          >
-            RSVP
-          </button>
+       
+            <div className="relative w-full flex items-center justify-center" style={{height:'90vh'}}>
+            {/* Background image mờ */}
+            <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-sm"
+                style={{
+                    backgroundImage: `url(${banner1})`,
+                }}
+            />
+            {/* Overlay để làm mờ thêm nếu cần */}
+            <div className="absolute inset-0 bg-black opacity-40" />
+            {/* Button */}
+ <button
+    onClick={openModal}
+    className="relative z-10 bg-gray-400 text-white font-semibold py-3 px-6 rounded-1 hover:bg-gray-500 transition opacity-70"
+    style={{ boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)' }} // Thêm box-shadow phía dưới
+>
+    Bạn có tham dự không?
+</button>
+            {/* Modal */}
+            {isModalOpen && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="bg-white p-6 rounded-lg w-11/12 max-w-md relative">
+                        {/* Nút đóng (dấu X) */}
+                        <button
+                            onClick={closeModal}
+                            className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 text-2xl"
+                        >
+                            &times;
+                        </button>
+                        <InvitationForm/>
+                    </div>
+                </div>
+            )}
         </div>
       </div>
     </div>
