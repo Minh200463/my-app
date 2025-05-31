@@ -12,7 +12,7 @@ import banner2 from '../assets/images/banner2.jpg';
 
 
 function Carousel() {
-  
+
   const directionLink = "https://maps.app.goo.gl/dsY7U99mTDDKaRUx8";
 
   const handleOpenMap = () => {
@@ -319,67 +319,66 @@ function Carousel() {
 
 
           <div class="map-container">
-          <div>Địa điểm tổ chức</div>
+            <div>Địa điểm tổ chức</div>
             <p class="map-address">123 Wedding Road, Ho Chi Minh City, Vietnam</p>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.2266760293032!2d108.10078709678956!3d15.579533300000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3169f9004af3c39d%3A0x54da01d2d65995b!2zTmjDoCBow6BuZyBLw6wgSMawxqFuZw!5e0!3m2!1svi!2s!4v1748626215262!5m2!1svi!2s" width='100%' height='450' style={{ border: 0 }} allowFullScreen='' loading='lazy' referrerPolicy='no-referrer-when-downgrade' title='đường đi'></iframe>
-              <button
-        onClick={handleOpenMap}
-        style={{
-          marginTop: '10px',
-          padding: '10px 20px',
-          backgroundColor: '#007bff',
-          color: 'white',
-          border: 'none',
-          borderRadius: '5px',
-          cursor: 'pointer',
-        }}
-      >
-        Xem đường đi
-      </button>
+            <button
+              onClick={handleOpenMap}
+              style={{
+                marginTop: '10px',
+                padding: '10px 20px',
+                backgroundColor: '#007bff',
+                color: 'white',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer',
+              }}
+            >
+              Xem đường đi
+            </button>
           </div>
 
-        <div className='album-wedding'>
-          <span>Ablum ảnh cưới</span><span>---------</span>
-        
-<div className='album-wedding container mx-auto p-4'>
-        <h2 class="text-3xl font-great-vibes text-center text-gray-800 mb-6">Wedding Memories</h2>
-        <div className='grid grid-cols-2 gap-2'>
-            <img src={wedding1} alt="Wedding Photo 1" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'/>
-            <img src={wedding1} alt='Wedding Photo 2' className='w-full h-auto object-cover rounded-lg transform -translate-y-2'/>
+          <div className='album-wedding'>
+            <span>Ablum ảnh cưới</span><span>---------</span>
+
+            <div className='album-wedding container mx-auto p-4'>
+              <h2 class="text-3xl font-great-vibes text-center text-gray-800 mb-6">Wedding Memories</h2>
+              <div className='grid grid-cols-2 gap-2'>
+                <img src={wedding1} alt="Wedding 1" className='w-full h-auto object-cover rounded-lg transform -translate-y-2' />
+                <img src={wedding1} alt='Wedding 2' className='w-full h-auto object-cover rounded-lg transform -translate-y-2' />
+              </div>
+              <div className='grid grid-cols-3 gap-2'>
+                <img src={wedding1} alt='Wedding 3' className='w-full h-auto object-cover rounded-lg translate-y-2' />
+                <img src={wedding1} alt='Wedding 4' className='w-full h-auto object-cover rounded-lg -translate-y-1' />
+                <img src={wedding1} alt='Wedding 6' className='w-full h-auto object-cover rounded-lg translate-y-2' />
+
+              </div>
+              <div className="grid grid-cols-2">
+
+                <div className="row-span-2">
+                  <img
+                    src={wedding1}
+                    alt="Wedding 5" style={{ width: '90%' }}
+                    className=' h-auto object-cover rounded-lg translate-y-4'
+                  />
+                </div>
+                <div className='flex flex-col gap-2 '>
+                  <img
+                    src={banner1}
+                    alt="Wedding 7"
+                    className='h-auto object-cover rounded-lg translate-y-4'
+                  />
+                  <img
+                    src={banner2}
+                    alt="Wedding 8"
+                    className=' h-auto object-cover rounded-lg translate-y-4'
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='grid grid-cols-3 gap-2'>
-            <img src={wedding1} alt='Wedding Photo 3' className='w-full h-auto object-cover rounded-lg translate-y-2'/>
-            <img src={wedding1} alt='Wedding Photo 4' className='w-full h-auto object-cover rounded-lg -translate-y-1'/>
-            <img src={wedding1} alt='Wedding Photo 6' className='w-full h-auto object-cover rounded-lg translate-y-2'/>
-            
-        </div>
-       <div className="grid grid-cols-2">
-    {/* Cột bên trái: wedding1 */}
-    <div className="row-span-2">
-        <img
-            src={wedding1}
-            alt="Wedding Photo 5" style={{width:'90%'}}
-            className=' h-auto object-cover rounded-lg translate-y-4'
-        />
-    </div>
-    {/* Cột bên phải: banner1 và banner2 */}
-    <div className='flex flex-col gap-2 '>
-        <img
-            src={banner1}
-            alt="Wedding Photo 7"
-            className='h-auto object-cover rounded-lg translate-y-4'
-        />
-        <img
-            src={banner2}
-            alt="Wedding Photo 8" 
-            className=' h-auto object-cover rounded-lg translate-y-4'
-        />
-    </div>
-</div>
-    </div>
-        </div>
-        </div>
-        
+
 
         <div className="min-h-screen flex flex-col justify-center items-center text-center p-4 z-10 relative">
           <h2
