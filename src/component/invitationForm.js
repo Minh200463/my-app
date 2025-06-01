@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import { motion } from 'framer-motion'
 const InvitationForm = ({ onSuccess }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -10,7 +9,7 @@ const InvitationForm = ({ onSuccess }) => {
     quantity: '', // Mặc định: 2 người
     whoYour: '', // Mặc định: "Cô dâu"
   });
-    const [messgae,setMessage] = useState(""); // Sửa lỗi khai báo useState
+    const [message, setMessage] = useState(""); // Sửa lỗi khai báo useState
     const [isSuccess, setIsSuccess] = useState(false);    
 
 
@@ -64,25 +63,7 @@ const InvitationForm = ({ onSuccess }) => {
 }
     onSuccess();
   };
-// Hiệu ứng animation cho thông báo thành công
-  const successVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-        scale: {
-          duration: 0.3,
-          repeat: 3, // Rung nhẹ 3 lần
-          repeatType: "reverse", // Rung qua lại
-          ease: "easeInOut",
-        },
-      },
-    },
-  };
+
  return (
     <div className="form-container max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg border border-gray-200">
             {/* Tiêu đề */}
@@ -162,7 +143,7 @@ const InvitationForm = ({ onSuccess }) => {
                         name="whoYour"
                         value={formData.whoYour}
                         onChange={handleInputChange}
-                        className="form-input w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 transition shadow-sm"
+                        className="form-input w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 transition shadow-sm"
                         required
                     >
                         <option value="" disabled>

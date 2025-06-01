@@ -35,6 +35,25 @@ const openModal = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
     exit: { opacity: 0, y: 50, transition: { duration: 0.3, ease: "easeIn" } },
   };
+  // Hiệu ứng animation cho thông báo thành công
+  const successVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        scale: {
+          duration: 0.3,
+          repeat: 3, // Rung nhẹ 3 lần
+          repeatType: "reverse", // Rung qua lại
+          ease: "easeInOut",
+        },
+      },
+    },
+  };
 
 //googlemap
   const directionLink = "https://maps.app.goo.gl/dsY7U99mTDDKaRUx8";
@@ -116,6 +135,7 @@ const openModal = () => {
       snowObserver.observe(currentContainer);
     }
 
+    
     return () => {
       if (currentContainer) {
         snowObserver.unobserve(currentContainer);
@@ -470,7 +490,7 @@ const openModal = () => {
       <AnimatePresence>
         {isModalOpen && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+            className="fixed inset-0 z-50 flex items-center justify-center"
             initial="hidden"
             animate="visible"
             exit="exit"
@@ -499,11 +519,11 @@ const openModal = () => {
       <AnimatePresence>
         {isSuccessModalOpen && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+            className="fixed inset-0 z-50 flex items-center justify-center "
             initial="hidden"
             animate="visible"
             exit="exit"
-            variants={modalVariants}
+            variants={successVariants}
           >
             <div className="bg-white p-6 rounded-lg max-w-md w-11/12 text-center relative">
               <button
