@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { motion } from 'framer-motion'
-const InvitationForm = () => {
+const InvitationForm = ({ onSuccess }) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -10,8 +10,8 @@ const InvitationForm = () => {
     quantity: '', // Mặc định: 2 người
     whoYour: '', // Mặc định: "Cô dâu"
   });
-  const [ setMessage] = useState('');
-const [isSuccess, setIsSuccess] = useState(false);
+    const [messgae,setMessage] = useState(""); // Sửa lỗi khai báo useState
+    const [isSuccess, setIsSuccess] = useState(false);    
 
 
    const handleInputChange = (e) => {
@@ -58,17 +58,31 @@ const [isSuccess, setIsSuccess] = useState(false);
           quantity: '',
           whoYour: '',
         });
-        console.log(response.data)
-      }, 300);
-    } catch (error) {
-      setMessage('Có lỗi xảy ra. Vui lòng thử lại.');
-    }
+    }, 30);
+} catch (error) {
+    setMessage('Có lỗi xảy ra. Vui lòng thử lại.');
+}
+    onSuccess();
   };
 // Hiệu ứng animation cho thông báo thành công
-    const successVariants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-    };
+  const successVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        scale: {
+          duration: 0.3,
+          repeat: 3, // Rung nhẹ 3 lần
+          repeatType: "reverse", // Rung qua lại
+          ease: "easeInOut",
+        },
+      },
+    },
+  };
  return (
     <div className="form-container max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg border border-gray-200">
             {/* Tiêu đề */}
@@ -179,18 +193,7 @@ const [isSuccess, setIsSuccess] = useState(false);
                     Gửi Thông Tin
                 </button>
             </form>
-           {isSuccess && (
-                <motion.div
-                    className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg text-center"
-                    variants={successVariants}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    <p className="text-green-700 font-medium">
-                        Cảm ơn quý khách đã xác nhận tham dự! Chúng tôi rất hân hạnh chào đón bạn.
-                    </p>
-                </motion.div>
-            )}
+          
         </div>
   );
 };

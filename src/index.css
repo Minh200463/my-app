@@ -70,12 +70,9 @@ code {
 /* Animation cho các phần tử */
 .animate {
   opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 1s ease;
 }
-.animate2 {
-  opacity: 0;
-  transition: opacity 0.8s ease, transform 0.4s ease;
-}
+
 .animate.is-visible {
   opacity: 1;
 }
