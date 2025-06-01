@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-const InvitationForm = ({ onSuccess }) => {
+const InvitationForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -10,8 +10,6 @@ const InvitationForm = ({ onSuccess }) => {
     whoYour: '', // Mặc định: "Cô dâu"
   });
     const [message, setMessage] = useState(""); // Sửa lỗi khai báo useState
-    const [isSuccess, setIsSuccess] = useState(false);    
-
 
    const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -42,28 +40,30 @@ const InvitationForm = ({ onSuccess }) => {
       ...formData,
       quantity: parseInt(formData.quantity), // Chuyển thành int
     };
-    
-    try {
-      const response = await axios.post('https://backendwedding-gnhaf5a9fse4czhh.eastus2-01.azurewebsites.net/api/guest', submitData);
-      setMessage(response.data);
-      setTimeout(() => {
-        setIsSuccess(true);
-        setMessage('');
-        setFormData({
-          name: '',
-          phone: '',
-          description: '',
-          isJoin: '',
-          quantity: '',
-          whoYour: '',
-        });
-    }, 30);
-} catch (error) {
-    setMessage('Có lỗi xảy ra. Vui lòng thử lại.');
-}
-    onSuccess();
-  };
+    // Gọi onSubmit ngay lập tức để hiển thị modal cảm ơn
+    if (onSubmit) onSubmit();
 
+    // Gửi API trong nền
+    try {
+      const response = await axios.post(
+        "https://backendwedding-gnhaf5a9fse4czhh.eastus2-01.azurewebsites.net/api/guest",
+        submitData
+      );
+      console.log("API Response:", response.data);
+      setMessage("");
+      setFormData({
+        name: "",
+        phone: "",
+        description: "",
+        isJoin: "",
+        quantity: "",
+        whoYour: "",
+      });
+    } catch (error) {
+      console.error("API Error:", error);
+      setMessage("Có lỗi xảy ra. Vui lòng thử lại.");
+    }
+  }
  return (
     <div className="form-container max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg border border-gray-200">
             {/* Tiêu đề */}
@@ -175,13 +175,6 @@ const InvitationForm = ({ onSuccess }) => {
                 </button>
             </form>
         {message && <p className="text-red-500 text-center mt-2">{message}</p>}
-        {isSuccess && (
-        <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg text-center">
-          <p className="text-green-700 font-medium">
-            Cảm ơn quý khách đã xác nhận tham dự! Chúng tôi rất hân hạnh chào đón bạn.
-          </p>
-        </div>
-      )}
         </div>
   );
 };

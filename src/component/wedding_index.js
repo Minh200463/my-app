@@ -53,6 +53,7 @@ const openModal = () => {
         },
       },
     },
+    exit: { opacity: 0, y: 50, transition: { duration: 0.3, ease: "easeIn" } },
   };
 
 //googlemap
@@ -486,75 +487,68 @@ const openModal = () => {
 >
     Bạn có tham dự không?
 </button>
-           {/* Modal chứa form */}
-      <AnimatePresence>
-        {isModalOpen && (
-          <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center"
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={modalVariants}
-          >
-            <div className="bg-white p-6 rounded-lg w-11/12 max-w-md relative">
-              {/* Nút đóng (dấu X) */}
-              <button
-                onClick={closeModal}
-                className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 text-2xl"
+          {/* Modal chứa form */}
+          <AnimatePresence>
+            {isModalOpen && (
+              <motion.div
+                className="fixed inset-0 z-50 flex items-center justify-center"
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={modalVariants}
               >
-                ×
-              </button>
-              <InvitationForm
-                onSuccess={() => {
-                  setIsModalOpen(false); // Đóng modal form
-                  setIsSuccessModalOpen(true); // Mở modal cảm ơn
-                }}
-              />
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                <div className="bg-white p-6 rounded-lg w-11/12 max-w-md relative">
+                  {/* Nút đóng (dấu X) */}
+                  <button
+                    onClick={closeModal}
+                    className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 text-2xl"
+                  >
+                    ×
+                  </button>
+                  <InvitationForm
+                    onSubmit={() => {
+                      setIsModalOpen(false); // Đóng modal form
+                      setIsSuccessModalOpen(true); // Mở modal cảm ơn
+                    }}
+                  />
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-      {/* Modal cảm ơn */}
-      <AnimatePresence>
-        {isSuccessModalOpen && (
-          <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center "
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={successVariants}
-          >
-            <div className="bg-white p-6 rounded-lg max-w-md w-11/12 text-center relative">
-              <button
-                onClick={closeModal}
-                className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 text-2xl"
+     {/* Modal cảm ơn */}
+          <AnimatePresence>
+            {isSuccessModalOpen && (
+              <motion.div
+                className="fixed inset-0 z-50 flex items-center justify-center"
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={successVariants}
               >
-                ×
-              </button>
-              <h2 className="text-2xl font-great-vibes text-gray-800 mb-4">
-                Cảm Ơn Bạn!
-              </h2>
-              <div className="flex justify-center mb-4">
-            <img
-              src="https://media.giphy.com/media/l0HlOotPq2M1o9oIg/giphy.gif" // GIF placeholder
-              alt="Cô dâu chú rể cúi đầu cảm ơn"
-              className="w-24 h-24"
-            />
-          </div>
-              <p className="text-gray-600 mb-4">
-                Chúng tôi rất vui vì bạn đã xác nhận tham dự. Chúc bạn một ngày vui vẻ!
-              </p>
-              <button
-                onClick={closeModal}
-                className="bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold py-2 px-4 rounded-lg hover:from-pink-600 hover:to-rose-600 transition"
-              >
-                Đóng
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                <div className="bg-white p-6 rounded-lg max-w-md w-11/12 text-center relative">
+                  <button
+                    onClick={closeModal}
+                    className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 text-2xl"
+                  >
+                    ×
+                  </button>
+                  <h2 className="text-2xl font-great-vibes text-gray-800 mb-4">
+                    Cảm Ơn Bạn!
+                  </h2>
+                  <p className="text-gray-600 mb-4">
+                    Chúng tôi rất vui vì bạn đã xác nhận tham dự. Chúc bạn một ngày vui vẻ!
+                  </p>
+                  <button
+                    onClick={closeModal}
+                    className="bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold py-2 px-4 rounded-lg hover:from-pink-600 hover:to-rose-600 transition"
+                  >
+                    Đóng
+                  </button>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </div>
