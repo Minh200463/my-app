@@ -174,7 +174,7 @@ const InvitationForm = ({ onSuccess }) => {
                     Gửi Thông Tin
                 </button>
             </form>
-          
+        {message && <p className="text-red-500 text-center mt-2">{message}</p>}
         </div>
   );
 };
