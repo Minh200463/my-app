@@ -42,8 +42,8 @@ code {
 
 .snowflake {
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
   background: white;
   border-radius: 50%;
   animation: fall linear infinite;
@@ -70,7 +70,7 @@ code {
 /* Animation cho các phần tử */
 .animate {
   opacity: 0;
-  transition: opacity 0.5s ease, transform 1s ease;
+  transition: opacity 0.5s ease, transform 2s ease;
 }
 
 .animate.is-visible {
@@ -79,24 +79,29 @@ code {
 
 .animate[data-animate="fade"] {
   transform: translateY(0);
+  transition: opacity 2s ease, transform 5s ease;
 }
 
 .animate[data-animate="fade-up"] {
   transform: translateY(20px);
+  transition: opacity 3s ease, transform 3s ease;
 }
 .animate.is-visible[data-animate="fade-up"] {
   transform: translateY(0);
 }
 
 .animate[data-animate="fade-right"] {
-  transform: translateX(-20px);
+  transform: translateX(-30px);
+  transition: opacity 3s ease, transform 3s ease;
 }
 .animate.is-visible[data-animate="fade-right"] {
   transform: translateX(0);
+
 }
 
 .animate[data-animate="fade-left"] {
-  transform: translateX(20px);
+  transform: translateX(30px);
+  transition: opacity 3s ease, transform 3s ease;
 }
 .animate.is-visible[data-animate="fade-left"] {
   transform: translateX(0);
@@ -364,3 +369,63 @@ code {
     }
 
     
+
+  .wedding-date-container {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff3e6, #ffe6f2);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.wedding-time {
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 1.1em;
+  color: #d4a59a;
+  letter-spacing: 1px;
+  display: block;
+}
+
+.wedding-time-bold {
+  font-weight: 700;
+  color: #8b5e3c;
+}
+
+.date-form {
+  font-family: "Lora", serif;
+  font-size: 1.5em;
+  color: #4a3c31;
+  margin: 10px 0;
+}
+
+.date-label {
+  font-weight: 600;
+}
+
+.date-pipe {
+  color: #d4a59a;
+  font-weight: 300;
+}
+
+.date-day,
+.date-year {
+  font-weight: 500;
+}
+
+.wedding-note {
+  font-family: 'Lora', serif;
+  font-size: 0.9em;
+  font-style: italic;
+  color: #7a6a53;
+  display: block;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Hiệu ứng hover (tùy chọn) */
+.wedding-date-container:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}

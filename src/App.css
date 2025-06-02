@@ -51,7 +51,8 @@
 }
 .font_thumoi2{
    font-family: "Ephesis", cursive;
-  font-weight: 400;
+  font-weight: 600;
+  letter-spacing: 2px;
   font-style: normal;
 }
 .font_lecuoi{
@@ -64,6 +65,13 @@
   font-weight: 400;
   font-style: normal;
 }
+.font_thumoitiecuoi{
+   font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
+
 
 .custom-aos {
   transform: translateY(20px);

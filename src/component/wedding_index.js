@@ -8,14 +8,17 @@ import wedding1 from '../assets/images/wedding-1.jpg';
 import wedding2 from '../assets/images/wedding-2.jpg';
 import wedding3 from '../assets/images/wedding-3.jpg';
 import banner1 from '../assets/images/banner1.jpg';
+import tim from '../assets/images/tim.png';
 import banner2 from '../assets/images/banner2.jpg';
+import weddingsong from '../assets/images/7.beautiful in white.mp3';
 import { motion, AnimatePresence } from 'framer-motion'
 import InvitationForm from './invitationForm';
 
 
 function Carousel() {
-const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+  const audioRef = useRef(null);
 
 const openModal = () => {
     setIsModalOpen(true);
@@ -86,11 +89,31 @@ const openModal = () => {
         ease: 'easeInOut', // Hiệu ứng mượt mà
       },
     },
+    shake: {
+    y: [0, -1, 1, -1, 1, 0], // Di chuyển lên xuống
+    rotate: [0, 2, -2, 2, -2, 0], // Rung lắc qua lại
+    scale: [1, 1, 1, 1., 1, 1], // Phóng to/thu nhỏ nhẹ
+    transition: {
+      duration: 2, // Thời gian 1 chu kỳ
+      repeat: Infinity, // Lặp vô hạn
+      ease: "easeInOut",
+    },
+  },
   };
   const containerRef = useRef(null);
 
-
   useEffect(() => {
+const audio = audioRef.current;
+    if (audio) {
+      audio.muted = true; // Bắt đầu với muted để vượt qua chính sách autoplay
+      audio.play().catch((error) => {
+        console.log("Autoplay blocked by browser, user interaction required:", error);
+      });
+      // Bỏ mute sau 1 giây (hoặc khi âm thanh bắt đầu)
+      setTimeout(() => {
+        audio.muted = false;
+      }, 1000);
+    }
 
     // Tạo bông tuyết động
     const snowContainer = document.querySelector('.snow-container');
@@ -99,9 +122,9 @@ const openModal = () => {
       const snowflake = document.createElement('div');
       snowflake.className = 'snowflake';
       snowflake.style.left = `${Math.random() * 100}vw`;
-      snowflake.style.animationDelay = `${Math.random() * 5}s`;
-      snowflake.style.animationDuration = `${3 + Math.random() * 3}s`; // Nhanh hơn
-      snowflake.style.opacity = `${0.5 + Math.random() * 0.5}`;
+      snowflake.style.animationDelay = `${Math.random() * 10}s`;
+      snowflake.style.animationDuration = `${6 + Math.random() * 8}s`; // Nhanh hơn
+      snowflake.style.opacity = `${5 + Math.random() * 0.5}`;
       snowContainer.appendChild(snowflake);
     }
 
@@ -146,6 +169,15 @@ const openModal = () => {
   }, []);
   return (
     <div className="relative">
+      <button className='bg-white' onClick={() => audioRef.current.play()} style={{ position: "absolute", top: 10, right: 10, zIndex:9999 }}>
+  Bật nhạc
+</button>
+      {/* Audio element để phát nhạc */}
+      <audio ref={audioRef} loop>
+        ok
+       <source src={weddingsong} type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
       <div className="snow-container"></div>
 
       <div className="min-h-screen bg-gradient-to-b from-pink-100 to-rose-100 w-full overflow-x-hidden relative">
@@ -166,21 +198,19 @@ const openModal = () => {
               </h1>
             </div>
           </div>
-          <div className="absolute bottom-4 w-full text-center text-white mb-10 drop-shadow-lg">
+          <div className="absolute bottom-4 w-full text-center text-white mb-10 drop-shadow-lg font_thumoitiecuoi">
             <h1
-              className="text-2xl font-dancing-script animate"
+              className="text-2xl  animate"
               data-animate="fade"
-              data-delay="0.6s"
             >
               THƯ MỜI TIỆC CƯỚI
             </h1>
             <span
-              className="absolute left-1/2 transform -translate-x-1/2 bottom-[75px] w-48 h-1 animate"
+              
+              className="absolute transform -translate-x-1/2 bottom-[75px] w-48 h-1 animate"
               style={{
                 background: 'linear-gradient(to right, transparent, rgba(255, 255, 255), transparent)',
               }}
-              data-animate="fade"
-              data-delay="0.8s"
             ></span>
             <span>
               <p
@@ -207,7 +237,7 @@ const openModal = () => {
           style={{ backgroundImage: `url(${backgournd})` }}
         >
           <div
-            className="font_loiyeu animate"
+            className="font_loiyeu"
             style={{ fontSize: '1.3em' }}
             data-animate="fade"
             data-delay="0.1s"
@@ -221,41 +251,49 @@ const openModal = () => {
               <div className="row">
                 <div className="col-6 text-center animate" data-animate="fade" data-delay="0.1s">
                   <h3 className="text-sm font-bold text-pink-600 mb-2">NHÀ TRAI</h3>
-                  <p className="text-sm font-bold text-gray-700">Ông: PHẠM VĂN A</p>
+                  <p className="text-sm font-bold text-gray-700 m-0">Ông: PHẠM VĂN A</p>
                   <p className="text-sm font-bold text-gray-700">Bà: Lê Thị B</p>
                 </div>
                 <div className="col-6 col-md-6 text-center animate" data-animate="fade" data-delay="0.1s">
                   <h3 className="text-sm font-bold text-pink-600 mb-2">NHÀ GÁI</h3>
-                  <p className="text-sm font-bold text-gray-700">Ông: PHẠM VĂN A</p>
-                  <p className="text-sm font-bold text-gray-700">Bà: Lê Thị B</p>
+                  <p className="text-sm font-bold text-gray-700 m-0">Ông: ĐẶNG XUÂN TOÀN</p>
+                  <p className="text-sm font-bold text-gray-700">Bà: TĂNG THỊ HẠNH</p>
                 </div>
               </div>
-              <div className="row mt-5 p-3">
+              <div className='d-flex justify-content-center'>
+ <motion.img
+                        src={tim}
+                        alt="icon-tim"
+                        className="w-25 img-fluid"
+                        variants={floatAnimation} animate="float2"
+                        loading="lazy"
+                      />              </div>
+              <div className="row">
                 <div className="col-6 text-center animate" data-animate="fade" data-delay="0s">
-                  <h3 className="text-sm font-bold text-pink-600 mb-2">Chú rể</h3>
+                  <h3 className="text-sm font_thumoitiecuoi text-pink-600 mb-1">Chú Rể</h3>
                   <p
-                    className="text-sm font-bold text-gray-700 animate"
+                    className="text-lg font-bold text-gray-700 animate font_thumoi2"
                     data-animate="fade-up"
                     data-delay="0.1s"
                   >
-                    Minh Tâm
+                   Nguyễn Minh Tâm
                   </p>
                 </div>
                 <div className="col-6 col-md-6 text-center animate" data-animate="fade" data-delay="0s">
-                  <h3 className="text-sm font-bold text-pink-600 mb-2">Cô dâu</h3>
+                  <h3 className="text-sm font_thumoitiecuoi text-pink-600 mb-1">Cô dâu</h3>
                   <p
-                    className="text-sm font-bold text-gray-700 animate"
+                    className="text-lg font_thumoi2 text-gray-700 animate"
                     data-animate="fade-up"
                     data-delay="0.1s"
                   >
-                    Kiều Ly
+                    Đặng Thị Kiều Ly
                   </p>
                 </div>
                 <div
                   ref={containerRef}
                   className="container p-2 animate"
                   style={{ backgroundColor: '#003300' }}
-                  data-animate="fade-in"
+                  data-animate="fade"
                 >
                   <div className="row">
                     <div className="col-6">
@@ -286,7 +324,7 @@ const openModal = () => {
 
           <div className="relative">
             <span
-              className="absolute left-1/2 transform -translate-x-1/2 w-36 h-1 animate"
+              className="absolute left-1/2 transform -translate-x-1/2 w-36 h-1 "
               style={{
                 background: 'linear-gradient(to right, transparent, rgba(255, 255, 255), transparent)',
               }}
@@ -294,7 +332,7 @@ const openModal = () => {
               data-delay="0.1s"
             ></span>
             <h1
-              className="font_thumoi2 mt-3 text-white mb-0 animate"
+              className="font_thumoi2 mt-4 p-2 text-white mb-0 animate"
               style={{ fontSize: '2.2em' }}
               data-animate="fade"
               data-delay="0.1s"
@@ -302,7 +340,7 @@ const openModal = () => {
               Thư Mời
             </h1>
             <span
-              className="font_lecuoi text-white mt-0 animate"
+              className="font_lecuoi text-white font_thumoitiecuoi mt-0 animate"
               data-animate="fade"
               data-delay="0.2s"
             >
@@ -310,7 +348,7 @@ const openModal = () => {
             </span>
           </div>
 
-          <div className="row mt-3 d-flex justify-content-center text-center">
+          <div className="row mt-3 mb-4 d-flex justify-content-center text-center">
             <div className="col-4 align-content-around">
               <img
                 src={wedding3}
@@ -343,18 +381,29 @@ const openModal = () => {
             </div>
           </div>
 
-          <h1 className='text-center'>TIỆC MỪNG LỄ VU QUY</h1>
-          <div >
-            <span>Vào lúc <b>11h00 | CHỦ NHẬT</b></span>
-            <div className="date-form d-flex justify-content-around align-content-center">
-              <span className="label">Tháng 6</span>
-              <span className='pipe'>|</span>
-              22
-              <span className="pipe">|</span>
-              2025
-            </div>
-            <i>(Tức ngày 22 tháng 6 năm Giáp Ngọ)</i>
-          </div>
+           <span
+              className="font_lecuoi text-white font_thumoitiecuoi m-3 animate"
+              data-animate="fade"
+              data-delay="0.2s"
+            >
+              TIỆC MỪNG LỄ VU QUY
+            </span>
+ <motion.div
+  className="wedding-date-container mt-2"
+  variants={floatAnimation}
+  animate="shake" // Áp dụng hiệu ứng rung lắc
+   data-animate="fade"
+>
+    <span className="wedding-time">Vào lúc <span className="wedding-time-bold">10h30 | CHỦ NHẬT</span></span>
+    <div className="date-form d-flex justify-content-around align-content-center m-0 p-0">
+      <span className="date-day">22</span>
+      <span className="date-pipe">|</span>
+      <span className="date-label">Tháng 6</span>
+      <span className="date-pipe">|</span>
+      <span className="date-year">2025</span>
+    </div>
+    <span className="wedding-note">(Tức ngày 22 tháng 6 năm Giáp Ngọ)</span>
+  </motion.div>
 
 
 
@@ -416,23 +465,23 @@ const openModal = () => {
             <div className='album-wedding container mx-auto p-4'>
               <h2 className="text-3xl font-great-vibes text-center text-gray-800 mb-6">Wedding Memories</h2>
               <div className='grid grid-cols-2 gap-2'>
-                <motion.img src={wedding1} alt="Wedding 1" variants={floatAnimation} animate="float" className='w-full h-auto object-cover rounded-lg transform -translate-y-2 animate'
+                <motion.img src={wedding1} alt="Wedding 1" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'
                   data-animate="fade-right"
                   data-delay="1s" />
-                  <motion.img src={wedding2} alt="Wedding 2" variants={floatAnimation} animate="float2" className='w-full h-auto object-cover rounded-lg transform -translate-y-2 animate'
+                  <motion.img src={wedding2} alt="Wedding 2" variants={floatAnimation} animate="float2" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'
                   data-animate="fade-left"
                   data-delay="1s" />
                 {/* <img src={wedding1} alt='Wedding 2' className='w-full h-auto object-cover rounded-lg transform -translate-y-2' /> */}
               </div>
               <div className='grid grid-cols-3 gap-2'>
-                <motion.img src={wedding1} alt="Wedding 3" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2 animate'
+                <motion.img src={wedding1} alt="Wedding 3" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'
                   data-animate="fade"
                   data-delay="1s"/>
-                <motion.img src={wedding1} alt="Wedding 4" variants={floatAnimation} animate="float" className='w-full h-auto object-cover rounded-lg transform -translate-y-2 animate'
+                <motion.img src={wedding1} alt="Wedding 4" variants={floatAnimation} animate="float2" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'
                   data-animate="fade"
                   data-delay="1s"/>
                 
-                <motion.img src={wedding1} alt="Wedding 5" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2 animate'
+                <motion.img src={wedding1} alt="Wedding 5" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2 '
                   data-animate="fade"
                   data-delay="1s"/>
 
@@ -443,11 +492,11 @@ const openModal = () => {
                     src={wedding1}
                     alt="Wedding 5" style={{ width: '90%' }}
                     variants={floatAnimation}
-                    animate="float3" 
-                    className=' h-auto object-cover rounded-lg translate-y-42'
+                    animate="float2" 
+                    className=' h-auto object-cover rounded-lg translate-y-4'
                   />
                 </div>
-                <div className='flex flex-col gap-2 '>
+                <div className='flex flex-col '>
                   <motion.img
                     src={banner1}
                     variants={floatAnimation}
@@ -551,6 +600,7 @@ const openModal = () => {
           </AnimatePresence>
         </div>
       </div>
+      
     </div>
   );
 }
