@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import wedding4 from '../assets/images/battle_wedding1.jpg';
 import backgournd from '../assets/images/background_2img.jpg';
 import backgournd2 from '../assets/images/backg.png';
-import kieuly from '../assets/images/kieuly.jpg';
+import kieuly from '../assets/images/kieuly3.jpg';
 import minhtam from '../assets/images/minhtam.jpg';
 import wedding1 from '../assets/images/wedding-1.jpg';
 import wedding2 from '../assets/images/wedding-2.jpg';
@@ -207,7 +207,7 @@ const audio = audioRef.current;
               THƯ MỜI TIỆC CƯỚI
             </h1>
             <span
-              className="absolute transform -translate-x-1/2 bottom-[50px] w-48 h-1 animate"
+              className="absolute transform -translate-x-1/2 bottom-[53px] w-48 h-1 animate"
               style={{
                 background: 'linear-gradient(to right, transparent, rgba(0, 0, 0), transparent)',
               }}
