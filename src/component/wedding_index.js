@@ -272,7 +272,7 @@ const audio = audioRef.current;
                 <div className="col-6 text-center animate" data-animate="fade" data-delay="0s">
                   <h3 className="text-sm font_thumoitiecuoi text-pink-600 mb-1">Chú Rể</h3>
                   <p
-                    className="text-lg font-bold fw-bold text-gray-700 animate font_thumoi2"
+                    className="text-lg fs-3 font-bold fw-bold text-gray-700 animate font_thumoi2"
                     data-animate="fade-up"
                     data-delay="0.1s"
                   >
@@ -296,10 +296,10 @@ const audio = audioRef.current;
                   data-animate="fade"
                 >
                   <div className="row">
-                    <div className="col-6 m-0 ">
+                     <div className="col-6 m-0">
                       <img
                         src={minhtam}
-                        alt="Chú rể Minh Tâm"
+                        alt="chure"
                         className="img-fluid shadow animate"
                         loading="lazy"
                         data-animate="fade-right"
@@ -309,7 +309,7 @@ const audio = audioRef.current;
                     <div className="col-6 m-0">
                       <img
                         src={kieuly}
-                        alt="Cô dâu Kiều Ly"
+                        alt="codau"
                         className="img-fluid shadow animate"
                         loading="lazy"
                         data-animate="fade-left"
@@ -383,13 +383,13 @@ const audio = audioRef.current;
 
            <span
               className="font_lecuoi text-white font_thumoitiecuoi m-3 animate"
-              data-animate="fade"
+              data-animate="fade-up"
               data-delay="0.2s"
             >
               TIỆC MỪNG LỄ VU QUY
             </span>
  <motion.div
-  className="wedding-date-container mt-2"
+  className="wedding-date-container mt-2 animate"
   variants={floatAnimation}
   animate="shake" // Áp dụng hiệu ứng rung lắc
    data-animate="fade"
@@ -406,36 +406,60 @@ const audio = audioRef.current;
   </motion.div>
 
 
-
-          <div className='calendar-container'>
-            <div className='left-section'>
-              <h1 className='title'>Save</h1>
-              <span className='title-middle'>the</span>
-              <h1 className='title'>Date</h1>
-            </div>
-            <div className='right-section'>
-              <div className='couple-info'>
-                <h1>Tâm & Ly</h1>
-                <p className='underline'>ARE GETTING MARRIED!</p>
-              </div>
-              <div className='date-info'>June 2025</div>
-              <div className='calendar-grid'>
-                <div className='day-name'>Sun</div>
-                <div className='day-name'>Mon</div>
-                <div className='day-name'>Tue</div>
-                <div className='day-name'>Wed</div>
-                <div className='day-name'>Thu</div>
-                <div className='day-name'>Fri</div>
-                <div className='day-name'>Sat</div>
-                <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
-                <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
-                <div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div>
-                <div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
-                <div>29</div><div>30</div>
-              </div>
-              <div className='follow-note'>formal invitation to follow</div>
-            </div>
-          </div>
+<div className="calendar-container">
+  <div className="left-section">
+    <h1 className="title title-large">Save</h1>
+    <span className="title-middle">the</span>
+    <h1 className="title title-large">Date</h1>
+  </div>
+  <div className="right-section">
+    <div className="couple-info">
+      <h1 className="couple-name">Tâm & Ly</h1>
+      <p className="underline wedding-text">Are Getting Married!</p>
+    </div>
+    <div className="date-info">June 2025</div>
+    <div className="calendar-grid">
+      <div className="day-name">Sun</div>
+      <div className="day-name">Mon</div>
+      <div className="day-name">Tue</div>
+      <div className="day-name">Wed</div>
+      <div className="day-name">Thu</div>
+      <div className="day-name">Fri</div>
+      <div className="day-name">Sat</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+      <div>11</div>
+      <div>12</div>
+      <div>13</div>
+      <div>14</div>
+      <div>15</div>
+      <div>16</div>
+      <div>17</div>
+      <div>18</div>
+      <div>19</div>
+      <div>20</div>
+      <div>21</div>
+      <div className="highlight heart-highlight">22</div>
+      <div>23</div>
+      <div>24</div>
+      <div>25</div>
+      <div>26</div>
+      <div>27</div>
+      <div>28</div>
+      <div>29</div>
+      <div>30</div>
+    </div>
+    <div className="follow-note">Formal Invitation to Follow</div>
+  </div>
+</div>
 
 
 
