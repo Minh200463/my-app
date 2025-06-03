@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import wedding4 from '../assets/images/battle_wedding1.jpg';
-import backgournd from '../assets/images/backgournd.jpg';
+import backgournd from '../assets/images/background_2img.jpg';
 import backgournd2 from '../assets/images/backg.png';
 import kieuly from '../assets/images/kieuly.jpg';
 import minhtam from '../assets/images/minhtam.jpg';
@@ -207,7 +207,7 @@ const audio = audioRef.current;
               THƯ MỜI TIỆC CƯỚI
             </h1>
             <span
-              className="absolute transform -translate-x-1/2 bottom-[45px] w-48 h-1 animate"
+              className="absolute transform -translate-x-1/2 bottom-[52px] w-48 h-1 animate"
               style={{
                 background: 'linear-gradient(to right, transparent, rgba(0, 0, 0), transparent)',
               }}
@@ -234,7 +234,7 @@ const audio = audioRef.current;
 
         <div
           className="items-center text-center bg-cover bg-center relative z-10"
-          style={{ backgroundImage: `url(${backgournd})` }}
+          style={{ backgroundImage: `url(${backgournd2})` }}
         >
           <div
             className="font_loiyeu"
@@ -291,12 +291,12 @@ const audio = audioRef.current;
                 </div>
                 <div
                   ref={containerRef}
-                  className="container p-2 animate"
-                style={{ backgroundImage: `url(${backgournd2})` }}
+                  className="container p-3 animate"
+                style={{ backgroundImage: `url(${backgournd})`,backgroundSize: "cover",backgroundPosition: "center",backgroundRepeat: "no-repeat" }}
                   data-animate="fade"
                 >
                   <div className="row">
-                    <div className="col-6">
+                    <div className="col-6 m-0 ">
                       <img
                         src={minhtam}
                         alt="Chú rể Minh Tâm"
@@ -306,7 +306,7 @@ const audio = audioRef.current;
                         data-delay="0.1s"
                       />
                     </div>
-                    <div className="col-6">
+                    <div className="col-6 m-0">
                       <img
                         src={kieuly}
                         alt="Cô dâu Kiều Ly"
