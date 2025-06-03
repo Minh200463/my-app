@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
-import wedding4 from '../assets/images/image4.jpg';
+import wedding4 from '../assets/images/battle_wedding1.jpg';
 import backgournd from '../assets/images/backgournd.jpg';
-import codau from '../assets/images/codau.jpg';
-import chure from '../assets/images/chure.jpg';
+import kieuly from '../assets/images/kieuly.jpg';
+import minhtam from '../assets/images/minhtam.jpg';
 import wedding1 from '../assets/images/wedding-1.jpg';
 import wedding2 from '../assets/images/wedding-2.jpg';
 import wedding3 from '../assets/images/wedding-3.jpg';
@@ -169,7 +169,7 @@ const audio = audioRef.current;
   }, []);
   return (
     <div className="relative">
-      <button className='bg-white' onClick={() => audioRef.current.play()} style={{ position: "absolute", top: 10, right: 10, zIndex:9999 }}>
+      <button className='bg-white' onClick={() => audioRef.current.play()} style={{ position: "absolute", top: 10, left: 10, zIndex:9999 }}>
   Bật nhạc
 </button>
       {/* Audio element để phát nhạc */}
@@ -185,8 +185,8 @@ const audio = audioRef.current;
           className="min-h-screen bg-cover bg-center relative z-10"
           style={{ backgroundImage: `url(${wedding4})` }}
         >
-          <div className="flex flex-col justify-center items-center">
-            <div className="text-4xl text-white drop-shadow-lg mt-10 animate ballet-wedding" data-animate="fade-up">
+          <div className="flex flex-col align-items-end mx-4 pt-3">
+            <div className="text-4xl drop-shadow-lg mt-3 animate ballet-wedding">
               <h1 className="animate" data-animate="fade-up" data-delay="0.2s">
                 Kiều Ly
               </h1>
@@ -298,7 +298,7 @@ const audio = audioRef.current;
                   <div className="row">
                     <div className="col-6">
                       <img
-                        src={chure}
+                        src={minhtam}
                         alt="Chú rể Minh Tâm"
                         className="img-fluid shadow animate"
                         loading="lazy"
@@ -308,7 +308,7 @@ const audio = audioRef.current;
                     </div>
                     <div className="col-6">
                       <img
-                        src={codau}
+                        src={kieuly}
                         alt="Cô dâu Kiều Ly"
                         className="img-fluid shadow animate"
                         loading="lazy"

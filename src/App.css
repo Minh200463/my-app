@@ -41,8 +41,9 @@
 /*************/
 .ballet-wedding {
   font-family: "Mea Culpa", cursive;
-  font-weight: 800;
+  font-weight: bold;
   font-style: normal;
+  color: black;
   letter-spacing: 3px;
 }
 
