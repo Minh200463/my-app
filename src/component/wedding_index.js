@@ -272,7 +272,7 @@ const audio = audioRef.current;
                 <div className="col-6 text-center animate" data-animate="fade" data-delay="0s">
                   <h3 className="text-sm font_thumoitiecuoi text-pink-600 mb-1">Chú Rể</h3>
                   <p
-                    className="text-lg fs-3 font-bold fw-bold text-gray-700 animate font_thumoi2"
+                    className="text-lg font-bold fw-bold text-gray-700 animate font_thumoi2"
                     data-animate="fade-up"
                     data-delay="0.1s"
                   >
@@ -298,7 +298,7 @@ const audio = audioRef.current;
                   <div className="row">
                      <div className="col-6 m-0">
                       <img
-                        src={minhtam}
+                        src={kieuly}
                         alt="chure"
                         className="img-fluid shadow animate"
                         loading="lazy"
@@ -407,18 +407,18 @@ const audio = audioRef.current;
 
 
 <div className="calendar-container">
-  <div className="left-section">
-    <h1 className="title title-large">Save</h1>
-    <span className="title-middle">the</span>
-    <h1 className="title title-large">Date</h1>
+  <div className="left-section animate" data-animate="fade-down" data-delay="0.1s">
+    <h1 className="title title-large fs-1">Save</h1>
+    <span className="title title-large" style={{color:'#d36b7f'}}>the</span>
+    <h1 className="title title-large fs-1">Date</h1>
   </div>
   <div className="right-section">
     <div className="couple-info">
-      <h1 className="couple-name">Tâm & Ly</h1>
-      <p className="underline wedding-text">Are Getting Married!</p>
+      <h1 className="couple-name fs-3 animate " data-animate="fade-up" data-delay="0.6s">Tâm & Ly</h1>
+      <p className=" wedding-text animate" data-animate="fade" data-delay="0.1s">Are Getting Married!</p>
     </div>
-    <div className="date-info">June 2025</div>
-    <div className="calendar-grid">
+    <div className="date-info fs-1 mt-2 p-0 animate " data-animate="fade-left" data-delay="0.1s">June <span className='fs-3'>2025</span></div>
+    <div className="calendar-grid animate" data-animate="fade-up" data-delay="0.1s">
       <div className="day-name">Sun</div>
       <div className="day-name">Mon</div>
       <div className="day-name">Tue</div>
@@ -464,30 +464,42 @@ const audio = audioRef.current;
 
 
           <div className="map-container">
-            <div>Địa điểm tổ chức</div>
-            <p className="map-address">123 Wedding Road, Ho Chi Minh City, Vietnam</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.2266760293032!2d108.10078709678956!3d15.579533300000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3169f9004af3c39d%3A0x54da01d2d65995b!2zTmjDoCBow6BuZyBLw6wgSMawxqFuZw!5e0!3m2!1svi!2s!4v1748626215262!5m2!1svi!2s" width='100%' height='450' style={{ border: 0 }} allowFullScreen='' loading='lazy' referrerPolicy='no-referrer-when-downgrade' title='đường đi'></iframe>
+            <motion.div className='h1 font_thumoi2' variants={floatAnimation} animate="shake">Địa điểm tổ chức</motion.div>
+           <div className='p-3 text-white animate' data-animate="fade" style={{backgroundColor:'rgb(160,160,160,0.7)'}}>
+            <p className="map-address text-white font_thumoitiecuoi m-0 p-0 "><i className="bi bi-geo-alt fs-5" 
+             
+            ></i> NHÀ HÀNG KÌ HƯƠNG</p>
+            <i style={{fontSize:'0.8em'}}>244 QL14E, Khối phố An Tây, thị trấn Tâm Bình, Hiệp Đức, Quảng Nam</i>
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.2266760293032!2d108.10078709678956!3d15.579533300000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3169f9004af3c39d%3A0x54da01d2d65995b!2zTmjDoCBow6BuZyBLw6wgSMawxqFuZw!5e0!3m2!1svi!2s!4v1748626215262!5m2!1svi!2s" width='100%' height='300' style={{ border: 0 }} allowFullScreen='' loading='lazy' referrerPolicy='no-referrer-when-downgrade' title='đường đi'></iframe>
             <button
               onClick={handleOpenMap}
               style={{
                 marginTop: '10px',
-                padding: '10px 20px',
-                backgroundColor: '#007bff',
+                padding: '5px 20px',
+                backgroundColor: 'rgb(112,25,21,0.5)',
                 color: 'white',
                 border: 'none',
                 borderRadius: '5px',
+                fontSize:'0.8em',
                 cursor: 'pointer',
+                fontFamily:'Cal Sans'
               }}
             >
-              Xem đường đi
+              XEM TRÊN GOOGLE MAP
             </button>
+           </div>
+           
           </div>
 
           <div className='album-wedding'>
-            <span>Ablum ảnh cưới</span><span>---------</span>
+          <div className="album-title-container">
+  <span className="album-title">Album ảnh cưới</span>
+  <span className="decorative-line">
+    <span className="heart-on-line">♥</span>
+  </span>
+</div>
 
-            <div className='album-wedding container mx-auto p-4'>
-              <h2 className="text-3xl font-great-vibes text-center text-gray-800 mb-6">Wedding Memories</h2>
+            <div className='album-wedding container mx-auto '>
               <div className='grid grid-cols-2 gap-2'>
                 <motion.img src={wedding1} alt="Wedding 1" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'
                   data-animate="fade-right"

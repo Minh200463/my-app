@@ -83,10 +83,18 @@ code {
 }
 
 .animate[data-animate="fade-up"] {
-  transform: translateY(20px);
+  transform: translateY(40px);
   transition: opacity 3s ease, transform 3s ease;
 }
 .animate.is-visible[data-animate="fade-up"] {
+  transform: translateY(0);
+}
+
+.animate[data-animate="fade-down"] {
+  transform: translateY(-20px);
+  transition: opacity 3s ease, transform 3s ease;
+}
+.animate.is-visible[data-animate="fade-down"] {
   transform: translateY(0);
 }
 
@@ -196,9 +204,9 @@ code {
 
 /* Chữ "Are Getting Married!" */
 .wedding-text {
-  font-family: "Dancing Script", cursive;
-  font-size: 1.1rem; /* Kích thước nhỏ hơn */
-  color: #666;
+  font-family: "Lora", serif;
+  font-size: 0.8em; /* Kích thước nhỏ hơn */
+  color: #050000;
   margin: 0;
   position: relative;
   text-transform: uppercase;
@@ -208,7 +216,7 @@ code {
 .wedding-text::after {
   content: "";
   position: absolute;
-  width: 60px;
+  width: 140px;
   height: 2px;
   background: linear-gradient(to right, transparent, #d36b7f, transparent); /* Gạch chân gradient hồng */
   bottom: -5px;
@@ -271,7 +279,7 @@ code {
   color: #ff99a9; /* Màu hồng nhạt cho trái tim */
   opacity: 0.3; /* Độ trong suốt nhẹ */
   z-index: 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   animation: pulse 1.5s infinite ease-in-out; /* Hiệu ứng nhịp đập */
 }
 
@@ -534,3 +542,55 @@ code {
 
 
 
+/* Container cho tiêu đề và đoạn thẳng */
+.album-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Tiêu đề "Album ảnh cưới" */
+.album-title {
+  font-family: "Great Vibes", cursive; /* Font chữ sang trọng */
+  font-size: 2.5rem;
+  color: #d36b7f; /* Màu hồng đậm nhẹ */
+  margin-right: 15px; /* Khoảng cách giữa chữ và đoạn thẳng */
+  text-shadow: 1px 1px 2px rgba(255, 182, 193, 0.3); /* Bóng chữ nhẹ */
+}
+
+/* Đoạn thẳng */
+.decorative-line {
+  position: relative;
+  display: inline-block;
+  width: 150px; /* Chiều dài đoạn thẳng */
+  height: 2px; /* Độ dày đoạn thẳng */
+  background: linear-gradient(to right, transparent, #d36b7f, transparent); /* Gradient hồng */
+}
+
+/* Trái tim trên đoạn thẳng */
+.heart-on-line {
+  position: absolute;
+  top: -27px; /* Đặt trái tim lên trên đoạn thẳng */
+  left: 50%; /* Căn giữa đoạn thẳng */
+  transform: translateX(-50%); /* Căn chỉnh chính xác */
+  font-size: 1.5rem; /* Kích thước trái tim */
+  color: #ff99a9; /* Màu hồng nhạt */
+  animation: blink 2s infinite ease-in-out; /* Hiệu ứng nháy nháy */
+}
+
+/* Hiệu ứng nháy nháy */
+@keyframes blink {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(1.2); /* Phóng to nhẹ khi nháy */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
