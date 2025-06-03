@@ -186,7 +186,7 @@ const audio = audioRef.current;
           className="min-h-screen bg-cover bg-center relative z-10"
           style={{ backgroundImage: `url(${wedding4})` }}
         >
-          <div className="flex flex-col align-items-center mx-4 pt-3">
+          <div className="flex flex-col align-items-center mx-4 pt-1">
             <div className="text-4xl drop-shadow-lg mt-3 animate ballet-wedding">
               <h1 className="animate" data-animate="fade-up" data-delay="0.2s">
                 Kiều Ly
@@ -207,7 +207,7 @@ const audio = audioRef.current;
               THƯ MỜI TIỆC CƯỚI
             </h1>
             <span
-              className="absolute transform -translate-x-1/2 bottom-[52px] w-48 h-1 animate"
+              className="absolute transform -translate-x-1/2 bottom-[50px] w-48 h-1 animate"
               style={{
                 background: 'linear-gradient(to right, transparent, rgba(0, 0, 0), transparent)',
               }}
@@ -272,7 +272,7 @@ const audio = audioRef.current;
                 <div className="col-6 text-center animate" data-animate="fade" data-delay="0s">
                   <h3 className="text-sm font_thumoitiecuoi text-pink-600 mb-1">Chú Rể</h3>
                   <p
-                    className="text-lg font-bold text-gray-700 animate font_thumoi2"
+                    className="text-lg font-bold fw-bold text-gray-700 animate font_thumoi2"
                     data-animate="fade-up"
                     data-delay="0.1s"
                   >
@@ -282,7 +282,7 @@ const audio = audioRef.current;
                 <div className="col-6 col-md-6 text-center animate" data-animate="fade" data-delay="0s">
                   <h3 className="text-sm font_thumoitiecuoi text-pink-600 mb-1">Cô dâu</h3>
                   <p
-                    className="text-lg font_thumoi2 text-gray-700 animate"
+                    className="text-lg font_thumoi2 fw-bold text-gray-700 animate"
                     data-animate="fade-up"
                     data-delay="0.1s"
                   >
