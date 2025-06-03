@@ -185,7 +185,7 @@ const audio = audioRef.current;
           className="min-h-screen bg-cover bg-center relative z-10"
           style={{ backgroundImage: `url(${wedding4})` }}
         >
-          <div className="flex flex-col align-items-end mx-4 pt-3">
+          <div className="flex flex-col align-items-center mx-4 pt-3">
             <div className="text-4xl drop-shadow-lg mt-3 animate ballet-wedding">
               <h1 className="animate" data-animate="fade-up" data-delay="0.2s">
                 Kiều Ly
@@ -198,7 +198,7 @@ const audio = audioRef.current;
               </h1>
             </div>
           </div>
-          <div className="absolute bottom-4 w-full text-center text-white mb-10 drop-shadow-lg font_thumoitiecuoi">
+          <div className="absolute bottom-4 w-full text-center text-black mb-10 drop-shadow-lg font_thumoitiecuoi">
             <h1
               className="text-2xl  animate"
               data-animate="fade"
@@ -206,10 +206,9 @@ const audio = audioRef.current;
               THƯ MỜI TIỆC CƯỚI
             </h1>
             <span
-              
-              className="absolute transform -translate-x-1/2 bottom-[75px] w-48 h-1 animate"
+              className="absolute transform -translate-x-1/2 bottom-[35px] w-48 h-1 animate"
               style={{
-                background: 'linear-gradient(to right, transparent, rgba(255, 255, 255), transparent)',
+                background: 'linear-gradient(to right, transparent, rgba(0, 0, 0), transparent)',
               }}
             ></span>
             <span>
