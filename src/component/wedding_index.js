@@ -235,13 +235,12 @@ function Carousel() {
               THƯ MỜI TIỆC CƯỚI
             </motion.h1>
             <span
-              className="absolute left-1/3 transform -translate-x-1/2 bottom-[53px] w-64 h-1 animate"
-              data-animate="fade"
-              data-delay="4s"
+              className="absolute left-1/2 transform -translate-x-1/2 bottom-[53px] w-64 h-1"
               style={{
                 background: 'linear-gradient(to right, transparent, rgba(0, 0, 0), transparent)',
               }}
             ></span>
+
             <span>
               <p
                 className="text-xl font-playfair-display italic m-0 animate"
@@ -326,17 +325,21 @@ function Carousel() {
                   data-animate="fade"
                 >
                   <div className="row">
-                    <div className="col-6 m-0 animate"
-                      data-animate="fade-rig"
-                      data-delay="1s"
+                    <div className="col-6 m-0 "
+
                     >
-                      <motion.img
-                        src={minhtam}
-                        variants={floatAnimation}
-                        alt="chure"
-                        className="img-fluid shadow"
-                        loading="lazy"
-                      />
+                      <span className='animate'
+                        data-animate="fade-rig"
+                        data-delay="0.6s">
+                        <motion.img
+                          src={minhtam}
+                          variants={floatAnimation}
+                          alt="chure"
+                          className="img-fluid object-cover"
+                          loading="lazy"
+                        />
+                      </span>
+
                     </div>
                     <div className="col-6 m-0 animate"
                       data-animate="fade-left"
