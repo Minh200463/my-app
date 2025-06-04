@@ -320,27 +320,28 @@ function Carousel() {
                   data-animate="fade"
                 >
                   <div className="row">
-                    <div className="col-6 m-0">
-                      <span className='animate' 
-                      data-animate="fade-left"
-                        data-delay="0.6s">
-                        <img
-                          src={minhtam}
-                          alt="chure"
-                          className="img-fluid shadow"
-                          loading="lazy"
+                    <div className="col-6 m-0 animate"
+                      data-animate="fade-rig"
+                      data-delay="1s"
+                    >
+                      <img
+                        src={minhtam}
+                        alt="chure"
+                        className="img-fluid shadow"
+                        loading="lazy"
 
-                        />
-                      </span>
+                      />
                     </div>
-                    <div className="col-6 m-0">
+                    <div className="col-6 m-0 animate"
+                      data-animate="fade-left"
+                      data-delay="1s"
+                    >
                       <img
                         src={kieuly}
                         alt="codau"
-                        className="img-fluid shadow animate"
+                        className="img-fluid shadow"
                         loading="lazy"
-                        data-animate="fade-left"
-                        data-delay="0.6s"
+
                       />
                     </div>
                   </div>
@@ -351,7 +352,7 @@ function Carousel() {
 
           <div className="relative">
             <span
-              className="absolute left-1/2 transform -translate-x-1/2 w-36 h-1"
+              className="absolute left-1/3 transform -translate-x-1/2 w-36 h-1"
               style={{
                 background: 'linear-gradient(to right, transparent, rgba(255, 255, 255), transparent)',
               }}
@@ -375,7 +376,7 @@ function Carousel() {
 
           <div className="row mt-3 mb-4 d-flex justify-content-center text-center">
             <div className="col-4 align-content-around">
-              <span className="animate"
+              <div className="animate"
                 data-animate="fade-rig"
                 data-delay="1s">
                 <img
@@ -383,7 +384,7 @@ function Carousel() {
                   alt="Ảnh cưới kỷ niệm"
                   loading="lazy"
                 />
-              </span>
+              </div>
             </div>
             <div className="col-4 p-0">
               <img
