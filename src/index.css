@@ -104,7 +104,6 @@ code {
 }
 .animate.is-visible[data-animate="fade-rig"] {
   transform: translateX(0);
-
 }
 
 .animate[data-animate="fade-left"] {

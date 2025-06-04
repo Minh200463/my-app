@@ -11,7 +11,7 @@ import wedding3 from '../assets/images/wedding-3.jpg';
 import banner1 from '../assets/images/banner1.jpg';
 import tim from '../assets/images/tim.png';
 import banner2 from '../assets/images/banner2.jpg';
-import weddingsong from '../assets/images/7.beautiful in white.mp3';
+import weddingsong from '../assets/images/emdongy.mp3';
 import { motion, AnimatePresence } from 'framer-motion'
 import InvitationForm from './invitationForm';
 
@@ -313,7 +313,7 @@ const audio = audioRef.current;
                   <div className="row">
                      <div className="col-6 m-0">
                       <img
-                        src={minhtam}
+                        src={kieuly}
                         alt="chure"
                         className="img-fluid shadow animate"
                         loading="lazy"
@@ -339,12 +339,10 @@ const audio = audioRef.current;
 
           <div className="relative">
             <span
-              className="absolute left-1/2 transform -translate-x-1/2 w-36 h-1 animate "
+              className="absolute left-1/2 transform -translate-x-1/2 w-36 h-1"
               style={{
                 background: 'linear-gradient(to right, transparent, rgba(255, 255, 255), transparent)',
               }}
-              data-animate="fade"
-              data-delay="0.4s"
             ></span>
             <h1
               className="font_thumoi2 mt-4 p-2 text-white mb-0 animate"
