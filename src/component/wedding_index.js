@@ -5,12 +5,18 @@ import backgournd from '../assets/images/background_2img.jpg';
 import backgournd2 from '../assets/images/backg.png';
 import kieuly from '../assets/images/kieuly3.jpg';
 import minhtam from '../assets/images/minhtam.jpg';
-import wedding1 from '../assets/images/wedding-1.jpg';
-import wedding2 from '../assets/images/wedding-2.jpg';
-import wedding3 from '../assets/images/wedding-3.jpg';
+import w8 from '../assets/images/8.jpg';
+import w17 from '../assets/images/17.jpg';
+import w19 from '../assets/images/2.jpg';
+import w30 from '../assets/images/30.jpg';
+import w26 from '../assets/images/26.jpg';
+import w23 from '../assets/images/23.jpg';
+import w13 from '../assets/images/13.jpg';
+import w32 from '../assets/images/32.jpg';
+import w25 from '../assets/images/25.jpg';
+import w9 from '../assets/images/9.jpg';
 import banner1 from '../assets/images/banner1.jpg';
 import tim from '../assets/images/tim.png';
-import banner2 from '../assets/images/banner2.jpg';
 import weddingsong from '../assets/images/emdongy.mp3';
 import { motion, AnimatePresence } from 'framer-motion'
 import InvitationForm from './invitationForm';
@@ -229,7 +235,7 @@ function Carousel() {
               THƯ MỜI TIỆC CƯỚI
             </motion.h1>
             <span
-              className="absolute left-1/3 transform -translate-x-1/4 bottom-[53px] w-48 h-1 animate"
+              className="absolute left-1/3 transform -translate-x-1/2 bottom-[53px] w-64 h-1 animate"
               data-animate="fade"
               data-delay="4s"
               style={{
@@ -352,7 +358,9 @@ function Carousel() {
 
           <div className="relative">
             <span
-              className="absolute left-1/3 transform -translate-x-1/2 w-36 h-1"
+              className="absolute left-1/3 transform -translate-x-1/2 w-36 h-1 animate"
+              data-animate="fade"
+              data-delay="0.2s"
               style={{
                 background: 'linear-gradient(to right, transparent, rgba(255, 255, 255), transparent)',
               }}
@@ -380,7 +388,7 @@ function Carousel() {
                 data-animate="fade-rig"
                 data-delay="1s">
                 <img
-                  src={wedding3}
+                  src={w13}
                   alt="Ảnh cưới kỷ niệm"
                   loading="lazy"
                 />
@@ -388,7 +396,7 @@ function Carousel() {
             </div>
             <div className="col-4 p-0">
               <img
-                src={wedding1}
+                src={w25}
                 alt="Ảnh cưới lãng mạn"
                 className="mx-auto d-block animate"
                 loading="lazy"
@@ -398,7 +406,7 @@ function Carousel() {
             </div>
             <div className="col-4 align-content-around">
               <img
-                src={wedding2}
+                src={w9}
                 alt="Ảnh cưới hạnh phúc"
                 loading="lazy"
                 className="animate"
@@ -534,29 +542,29 @@ function Carousel() {
               >
                 <span className='animate' data-animate="fade-rig"
                   data-delay="0.6s">
-                  <motion.img src={wedding1} alt="Wedding 1" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2' />
+                  <motion.img src={w32} alt="Wedding 1" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2' />
                 </span>
                 <span className='animate' data-animate="fade-left"
                   data-delay="0.6s">
-                  <motion.img src={wedding2} alt="Wedding 2" variants={floatAnimation} animate="float2" className='w-full h-auto object-cover rounded-lg transform -translate-y-2' />
+                  <motion.img src={w26} alt="Wedding 2" variants={floatAnimation} animate="float2" className='w-full h-auto object-cover rounded-lg transform -translate-y-2' />
                 </span>
               </div>
               <div className='grid grid-cols-3 gap-2'>
                 <span className='animate' data-animate="fade-rig"
                   data-delay="0.6s">
-                  <motion.img src={wedding1} alt="Wedding 3" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'
+                  <motion.img src={w8} alt="Wedding 3" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'
                     data-animate="fade"
                     data-delay="1s" />
                 </span>
                 <span className='animate' data-animate="fade-up"
                   data-delay="0.6s">
-                  <motion.img src={wedding1} alt="Wedding 4" variants={floatAnimation} animate="float2" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'
+                  <motion.img src={w17} alt="Wedding 4" variants={floatAnimation} animate="float2" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'
                     data-animate="fade"
                     data-delay="1s" />
                 </span>
                 <span className='animate' data-animate="fade-left"
                   data-delay="0.6s">
-                  <motion.img src={wedding1} alt="Wedding 5" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2 '
+                  <motion.img src={w19} alt="Wedding 5" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2 '
                     data-animate="fade"
                     data-delay="1s" />
                 </span>
@@ -566,7 +574,7 @@ function Carousel() {
                 <div className="row-span-2 animate" data-animate="fade-rig"
                   data-delay="0.6s">
                   <motion.img
-                    src={wedding1}
+                    src={w30}
                     alt="Wedding 5" style={{ width: '90%' }}
                     variants={floatAnimation}
                     animate="float2"
@@ -576,14 +584,14 @@ function Carousel() {
                 <div className='flex flex-col animate' data-animate="fade-left"
                   data-delay="0.6s">
                   <motion.img
-                    src={banner1}
+                    src={w26}
                     variants={floatAnimation}
                     animate="float2"
                     alt="Wedding 7"
                     className='h-auto object-cover rounded-lg translate-y-4'
                   />
                   <motion.img
-                    src={banner2}
+                    src={w23}
                     animate="float3"
                     variants={floatAnimation}
                     alt="Wedding 8"
