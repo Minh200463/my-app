@@ -99,7 +99,17 @@ const openModal = () => {
       repeat: Infinity, // Lặp vô hạn
       ease: "easeInOut",
     },
+    
   },
+  scaleFade: {
+  scale: [1, 1.05, 1], // Phóng to/thu nhỏ nhẹ
+  opacity: [1, 0.9, 1], // Fade nhẹ
+  transition: {
+    duration: 2.5,
+    repeat: Infinity,
+    ease: "easeInOut",
+  },
+},
   };
   const containerRef = useRef(null);
 
@@ -181,7 +191,9 @@ const audio = audioRef.current;
       </audio>
       <div className="snow-container"></div>
 
-      <div className="min-h-screen bg-gradient-to-b from-pink-100 to-rose-100 w-full overflow-x-hidden relative">
+      <div className="min-h-screen bg-gradient-to-b from-pink-100 to-rose-100 w-full overflow-x-hidden relative"
+      
+      >
         <div
           className="min-h-screen bg-cover bg-center relative z-10"
           style={{ backgroundImage: `url(${wedding4})` }}
@@ -200,14 +212,17 @@ const audio = audioRef.current;
             </div>
           </div>
           <div className="absolute bottom-4 w-full text-center text-black mb-10 drop-shadow-lg font_thumoitiecuoi">
-            <h1
-              className="text-2xl  animate"
-              data-animate="fade"
+            <motion.h1
+              className="text-2xl animate"
+             data-animate="fade-up"
+                data-delay="2s"
             >
               THƯ MỜI TIỆC CƯỚI
-            </h1>
+            </motion.h1>
             <span
               className="absolute transform -translate-x-1/2 bottom-[53px] w-48 h-1 animate"
+              data-animate="fade"
+                data-delay="4s"
               style={{
                 background: 'linear-gradient(to right, transparent, rgba(0, 0, 0), transparent)',
               }}
@@ -215,16 +230,16 @@ const audio = audioRef.current;
             <span>
               <p
                 className="text-xl font-playfair-display italic m-0 animate"
-                data-animate="fade"
-                data-delay="0.6s"
+                data-animate="fade-up"
+                data-delay="2.5s"
               >
                 Chủ nhật - 11h00
               </p>
               <p
                 className="text-xl font-playfair-display animate"
                 style={{ letterSpacing: '5px', fontWeight: 'bold' }}
-                data-animate="fade"
-                data-delay="0.6s"
+                data-animate="fade-up"
+                data-delay="2.5s"
               >
                 22.6.2025
               </p>
@@ -298,11 +313,11 @@ const audio = audioRef.current;
                   <div className="row">
                      <div className="col-6 m-0">
                       <img
-                        src={kieuly}
+                        src={minhtam}
                         alt="chure"
                         className="img-fluid shadow animate"
                         loading="lazy"
-                        data-animate="fade-right"
+                        data-animate="fade-rig"
                         data-delay="0.1s"
                       />
                     </div>
@@ -324,18 +339,18 @@ const audio = audioRef.current;
 
           <div className="relative">
             <span
-              className="absolute left-1/2 transform -translate-x-1/2 w-36 h-1 "
+              className="absolute left-1/2 transform -translate-x-1/2 w-36 h-1 animate "
               style={{
                 background: 'linear-gradient(to right, transparent, rgba(255, 255, 255), transparent)',
               }}
               data-animate="fade"
-              data-delay="0.1s"
+              data-delay="0.4s"
             ></span>
             <h1
               className="font_thumoi2 mt-4 p-2 text-white mb-0 animate"
               style={{ fontSize: '2.2em' }}
               data-animate="fade"
-              data-delay="0.1s"
+              data-delay="0.2s"
             >
               Thư Mời
             </h1>
@@ -355,8 +370,8 @@ const audio = audioRef.current;
                 alt="Ảnh cưới kỷ niệm"
                 loading="lazy"
                 className="animate"
-                data-animate="fade"
-                data-delay="2s"
+                data-animate="fade-rig"
+                data-delay="1s"
               />
             </div>
             <div className="col-4 p-0">
@@ -366,7 +381,7 @@ const audio = audioRef.current;
                 className="mx-auto d-block animate"
                 loading="lazy"
                 data-animate="fade-up"
-                data-delay="2s"
+                data-delay="1s"
               />
             </div>
             <div className="col-4 align-content-around">
@@ -408,9 +423,9 @@ const audio = audioRef.current;
 
 <div className="calendar-container">
   <div className="left-section animate" data-animate="fade-down" data-delay="0.1s">
-    <h1 className="title title-large fs-1">Save</h1>
-    <span className="title title-large" style={{color:'#d36b7f'}}>the</span>
-    <h1 className="title title-large fs-1">Date</h1>
+    <span style={{fontSize:'2.7rem'}} className="title title-large">Save</span>
+    <span className="title title-large" style={{color:'#d36b7f', fontSize:'2rem'}}>the</span>
+    <span style={{fontSize:'2.7rem'}} className="title title-large">Date</span>
   </div>
   <div className="right-section">
     <div className="couple-info">
@@ -493,37 +508,51 @@ const audio = audioRef.current;
 
           <div className='album-wedding'>
           <div className="album-title-container">
-  <span className="album-title">Album ảnh cưới</span>
+  <motion.span className="album-title" animate="scaleFade"
+  variants={floatAnimation} 
+  data-animate="fade-up" data-delay="0.3s"
+  >Album ảnh cưới</motion.span>
   <span className="decorative-line">
     <span className="heart-on-line">♥</span>
   </span>
 </div>
 
             <div className='album-wedding container mx-auto '>
-              <div className='grid grid-cols-2 gap-2'>
-                <motion.img src={wedding1} alt="Wedding 1" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'
-                  data-animate="fade-right"
-                  data-delay="1s" />
-                  <motion.img src={wedding2} alt="Wedding 2" variants={floatAnimation} animate="float2" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'
-                  data-animate="fade-left"
-                  data-delay="1s" />
-                {/* <img src={wedding1} alt='Wedding 2' className='w-full h-auto object-cover rounded-lg transform -translate-y-2' /> */}
+              <div className='grid grid-cols-2 gap-2'
+                >
+               <span className='animate' data-animate="fade-rig"
+                data-delay="0.6s">
+                 <motion.img src={wedding1} alt="Wedding 1" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'/>
+               </span>
+               <span className='animate' data-animate="fade-left"
+                data-delay="0.6s">
+                  <motion.img src={wedding2} alt="Wedding 2" variants={floatAnimation} animate="float2" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'/>
+               </span>
               </div>
               <div className='grid grid-cols-3 gap-2'>
-                <motion.img src={wedding1} alt="Wedding 3" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'
+                <span className='animate' data-animate="fade-rig"
+                data-delay="0.6s">
+                  <motion.img src={wedding1} alt="Wedding 3" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'
                   data-animate="fade"
                   data-delay="1s"/>
-                <motion.img src={wedding1} alt="Wedding 4" variants={floatAnimation} animate="float2" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'
+                </span>
+               <span className='animate' data-animate="fade-up"
+                data-delay="0.6s">
+                 <motion.img src={wedding1} alt="Wedding 4" variants={floatAnimation} animate="float2" className='w-full h-auto object-cover rounded-lg transform -translate-y-2'
                   data-animate="fade"
                   data-delay="1s"/>
-                
+               </span>
+                <span className='animate' data-animate="fade-left"
+                data-delay="0.6s">
                 <motion.img src={wedding1} alt="Wedding 5" variants={floatAnimation} animate="float3" className='w-full h-auto object-cover rounded-lg transform -translate-y-2 '
                   data-animate="fade"
                   data-delay="1s"/>
+                </span>
 
               </div>
               <div className="grid grid-cols-2">
-                <div className="row-span-2">
+                <div className="row-span-2 animate" data-animate="fade-rig"
+                data-delay="0.6s">
                   <motion.img
                     src={wedding1}
                     alt="Wedding 5" style={{ width: '90%' }}
@@ -532,7 +561,8 @@ const audio = audioRef.current;
                     className=' h-auto object-cover rounded-lg translate-y-4'
                   />
                 </div>
-                <div className='flex flex-col '>
+                <div className='flex flex-col animate' data-animate="fade-left"
+                data-delay="0.6s">
                   <motion.img
                     src={banner1}
                     variants={floatAnimation}

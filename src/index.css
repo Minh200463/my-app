@@ -42,8 +42,8 @@ code {
 
 .snowflake {
   position: absolute;
-  width: 5px;
-  height: 5px;
+  width: 7px;
+  height: 7px;
   background: white;
   border-radius: 50%;
   animation: fall linear infinite;
@@ -79,7 +79,7 @@ code {
 
 .animate[data-animate="fade"] {
   transform: translateY(0);
-  transition: opacity 2s ease, transform 5s ease;
+  transition: opacity 3s ease, transform 5s ease;
 }
 
 .animate[data-animate="fade-up"] {
@@ -98,11 +98,11 @@ code {
   transform: translateY(0);
 }
 
-.animate[data-animate="fade-right"] {
+.animate[data-animate="fade-rig"] {
   transform: translateX(-30px);
   transition: opacity 3s ease, transform 3s ease;
 }
-.animate.is-visible[data-animate="fade-right"] {
+.animate.is-visible[data-animate="fade-rig"] {
   transform: translateX(0);
 
 }
@@ -123,8 +123,17 @@ code {
 }
 
 /* Áp dụng độ trễ animation */
-.animate[data-delay="0.1s"] {
-  transition-delay: 0.1s;
+.animate[data-delay="1s"] {
+  transition-delay: 1s;
+}
+.animate[data-delay="2s"] {
+  transition-delay: 2s;
+}
+.animate[data-delay="2.5s"] {
+  transition-delay: 2.5s;
+}
+.animate[data-delay="4s"] {
+  transition-delay: 4s;
 }
 .animate[data-delay="0.2s"] {
   transition-delay: 0.2s;
@@ -557,6 +566,10 @@ code {
   color: #d36b7f; /* Màu hồng đậm nhẹ */
   margin-right: 15px; /* Khoảng cách giữa chữ và đoạn thẳng */
   text-shadow: 1px 1px 2px rgba(255, 182, 193, 0.3); /* Bóng chữ nhẹ */
+}
+.album-title::before{
+   transform: translate(-50%, -50%) scale(2.5);
+   animation: pulse 1.5s infinite ease-in-out;
 }
 
 /* Đoạn thẳng */
