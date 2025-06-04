@@ -4,6 +4,7 @@ import wedding4 from '../assets/images/battle_wedding1.jpg';
 import backgournd from '../assets/images/background_2img.jpg';
 import backgournd2 from '../assets/images/backg.png';
 import kieuly from '../assets/images/kieuly3.jpg';
+import minhtam from '../assets/images/minhtam.jpg';
 import wedding1 from '../assets/images/wedding-1.jpg';
 import wedding2 from '../assets/images/wedding-2.jpg';
 import wedding3 from '../assets/images/wedding-3.jpg';
@@ -228,7 +229,7 @@ function Carousel() {
               THƯ MỜI TIỆC CƯỚI
             </motion.h1>
             <span
-              className="absolute transform -translate-x-1/2 bottom-[53px] w-48 h-1 animate"
+              className="absolute left-1/3 transform -translate-x-1/4 bottom-[53px] w-48 h-1 animate"
               data-animate="fade"
               data-delay="4s"
               style={{
@@ -320,10 +321,11 @@ function Carousel() {
                 >
                   <div className="row">
                     <div className="col-6 m-0">
-                      <span className='animate' data-animate="fade-rig"
+                      <span className='animate' 
+                      data-animate="fade-left"
                         data-delay="0.6s">
                         <img
-                          src={kieuly}
+                          src={minhtam}
                           alt="chure"
                           className="img-fluid shadow"
                           loading="lazy"
@@ -373,7 +375,6 @@ function Carousel() {
 
           <div className="row mt-3 mb-4 d-flex justify-content-center text-center">
             <div className="col-4 align-content-around">
-
               <span className="animate"
                 data-animate="fade-rig"
                 data-delay="1s">
