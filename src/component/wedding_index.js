@@ -116,13 +116,18 @@ const openModal = () => {
 const audio = audioRef.current;
     if (audio) {
       audio.muted = true; // Bắt đầu với muted để vượt qua chính sách autoplay
-      audio.play().catch((error) => {
-        console.log("Autoplay blocked by browser, user interaction required:", error);
-      });
-      // Bỏ mute sau 1 giây (hoặc khi âm thanh bắt đầu)
-      setTimeout(() => {
-        audio.muted = false;
-      }, 1000);
+      audio
+        .play()
+        .then(() => {
+          // Nếu play thành công, bỏ mute sau 1 giây
+          setTimeout(() => {
+            audio.muted = false;
+          }, 1000);
+        })
+        .catch((error) => {
+          console.log("Autoplay blocked by browser, user interaction required:", error);
+          // Nếu bị chặn, cung cấp tùy chọn thủ công (dù bạn muốn tránh)
+        });
     }
 
     // Tạo bông tuyết động
@@ -175,6 +180,11 @@ const audio = audioRef.current;
         snowObserver.unobserve(currentContainer);
       }
       elements.forEach((el) => animateObserver.unobserve(el));
+
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
     };
   }, []);
   return (
@@ -184,7 +194,6 @@ const audio = audioRef.current;
 </button>
       {/* Audio element để phát nhạc */}
       <audio ref={audioRef} loop>
-        ok
        <source src={weddingsong} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
@@ -317,7 +326,7 @@ const audio = audioRef.current;
                         className="img-fluid shadow animate"
                         loading="lazy"
                         data-animate="fade-rig"
-                        data-delay="0.1s"
+                        data-delay="0.6s"
                       />
                     </div>
                     <div className="col-6 m-0">
@@ -327,7 +336,7 @@ const audio = audioRef.current;
                         className="img-fluid shadow animate"
                         loading="lazy"
                         data-animate="fade-left"
-                        data-delay="0.1s"
+                        data-delay="0.6s"
                       />
                     </div>
                   </div>
