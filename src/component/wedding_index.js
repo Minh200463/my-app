@@ -4,7 +4,6 @@ import wedding4 from '../assets/images/battle_wedding1.jpg';
 import backgournd from '../assets/images/background_2img.jpg';
 import backgournd2 from '../assets/images/backg.png';
 import kieuly from '../assets/images/kieuly3.jpg';
-import minhtam from '../assets/images/minhtam.jpg';
 import wedding1 from '../assets/images/wedding-1.jpg';
 import wedding2 from '../assets/images/wedding-2.jpg';
 import wedding3 from '../assets/images/wedding-3.jpg';
