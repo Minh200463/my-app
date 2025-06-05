@@ -325,20 +325,19 @@ function Carousel() {
                   data-animate="fade"
                 >
                   <div className="row">
-                    <div className="col-6 m-0 "
-
-                    >
-                      <span className='animate'
-                        data-animate="fade-rig"
+                    <div className="col-6 m-0 animate"
+ data-animate="fade-rig"
                         data-delay="0.6s">
+                      
+                       
                         <motion.img
                           src={minhtam}
                           variants={floatAnimation}
                           alt="chure"
-                          className="img-fluid object-cover"
+                          className="img-fluid shadow object-cover"
                           loading="lazy"
                         />
-                      </span>
+                   
 
                     </div>
                     <div className="col-6 m-0 animate"
