@@ -441,7 +441,7 @@ function Carousel() {
               <span className="date-pipe">|</span>
               <span className="date-year">2025</span>
             </div>
-            <span className="wedding-note">(Tức ngày 22 tháng 6 năm Giáp Ngọ)</span>
+            <span className="wedding-note">(Tức ngày 27 tháng 5 năm Ất Tỵ)</span>
           </motion.div>
 
 
