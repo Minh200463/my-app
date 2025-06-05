@@ -99,11 +99,11 @@ code {
 }
 
 .animate[data-animate="fade-rig"] {
-  transform: translateX(-50px);
+  transform: translateX(-30px);
   transition: opacity 3s ease, transform 3s ease;
 }
 .animate.is-visible[data-animate="fade-rig"] {
-  transform: translateX(10px);
+  transform: translateX(0);
 }
 
 .animate[data-animate="fade-left"] {
@@ -142,6 +142,9 @@ code {
 }
 .animate[data-delay="0.4s"] {
   transition-delay: 0.4s;
+}
+.animate[data-delay="0.5s"] {
+  transition-delay: 0.5s;
 }
 .animate[data-delay="0.6s"] {
   transition-delay: 0.6s;

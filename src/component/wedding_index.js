@@ -268,28 +268,35 @@ function Carousel() {
           <div
             className="font_loiyeu"
             style={{ fontSize: '1.3em' }}
-            data-animate="fade"
-            data-delay="0.1s"
           >
-            <p className="pt-4 m-0">Yêu nhau là chuyện cả đời,</p>
-            <span className="m-0">Yêu người vừa ý, cưới người mình thương.</span>
+            <p className="pt-4 m-0 animate"    data-animate="fade-up"
+            data-delay="0.5s">Yêu nhau là chuyện cả đời,</p>
+            <p className="m-0 animate" data-animate="fade-up"
+            data-delay="0.8s">Yêu người vừa ý, cưới người mình thương.</p>
           </div>
 
           <div>
-            <div className="cbox pt-3">
+            <div className="cbox pt-5">
               <div className="row">
                 <div className="col-6 text-center animate" data-animate="fade" data-delay="0.1s">
-                  <h3 className="text-sm font-bold text-pink-600 mb-2">NHÀ TRAI</h3>
-                  <p className="text-sm font-bold text-gray-700 m-0">Ông: PHẠM VĂN A</p>
-                  <p className="text-sm font-bold text-gray-700">Bà: Lê Thị B</p>
+                  <span 
+  className="text-sm font-bold text-pink-600 font_nhatraigai rounded-5 border" 
+  style={{ padding: '3px 20px', backgroundColor: '#ffcccb' }} // Thêm background color
+>
+  NHÀ TRAI
+</span>
+                  <p className="text-sm font-bold text-gray-700 mb-2 mt-3">Ông: <span className='font_name_parents fs-5'>Nguyễn Văn Tám</span></p>
+                  <p className="text-sm font-bold text-gray-700">Bà: <span className='font_name_parents fs-5'>Đào Thị Hương</span></p>
                 </div>
                 <div className="col-6 col-md-6 text-center animate" data-animate="fade" data-delay="0.1s">
-                  <h3 className="text-sm font-bold text-pink-600 mb-2">NHÀ GÁI</h3>
-                  <p className="text-sm font-bold text-gray-700 m-0">Ông: ĐẶNG XUÂN TOÀN</p>
-                  <p className="text-sm font-bold text-gray-700">Bà: TĂNG THỊ HẠNH</p>
+                  <span className="text-sm font-bold text-pink-600 font_nhatraigai rounded-5 border "
+  style={{padding:'2px 20px', backgroundColor: '#ffcccb'}}
+                  >NHÀ GÁI</span>
+                  <p className="text-sm font-bold text-gray-700 mb-2 mt-3">Ông: <span className='font_name_parents fs-5'>Đặng Xuân Toàn</span></p>
+                  <p className="text-sm font-bold text-gray-700">Bà: <span className='font_name_parents fs-5'>Tăng Thị Hạnh</span></p>
                 </div>
               </div>
-              <div className='d-flex justify-content-center'>
+              <div className='d-flex justify-content-center m-3'>
                 <motion.img
                   src={tim}
                   alt="icon-tim"
@@ -320,12 +327,11 @@ function Carousel() {
                 </div>
                 <div
                   ref={containerRef}
-                  className="container p-3 animate"
+                  className="container p-3"
                   style={{ backgroundImage: `url(${backgournd})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
-                  data-animate="fade"
                 >
                   <div className="row">
-                    <div className="col-6 m-0 animate"
+                    <p className="col-6 m-0 animate"
                       data-animate="fade-rig"
                       data-delay="1s">
                       <img
@@ -334,10 +340,8 @@ function Carousel() {
                         className="img-fluid shadow"
                         loading="lazy"
                       />
-
-
-                    </div>
-                    <div className="col-6 m-0 animate"
+                    </p>
+                    <p className="col-6 m-0 animate"
                       data-animate="fade-left"
                       data-delay="1s"
                     >
@@ -348,7 +352,7 @@ function Carousel() {
                         loading="lazy"
 
                       />
-                    </div>
+                    </p>
                   </div>
                 </div>
               </div>

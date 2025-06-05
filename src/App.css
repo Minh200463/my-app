@@ -72,6 +72,18 @@
   font-weight: bold;
   font-style: normal;
 }
+.font_name_parents {
+   font-family: "Playball", cursive;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.font_nhatraigai {
+  font-family: "Elsie Swash Caps", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
 
 
 .custom-aos {
