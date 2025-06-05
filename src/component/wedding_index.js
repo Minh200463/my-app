@@ -326,18 +326,15 @@ function Carousel() {
                 >
                   <div className="row">
                     <div className="col-6 m-0 animate"
- data-animate="fade-rig"
-                        data-delay="0.6s">
-                      
-                       
-                        <motion.img
-                          src={minhtam}
-                          variants={floatAnimation}
-                          alt="chure"
-                          className="img-fluid shadow object-cover"
-                          loading="lazy"
-                        />
-                   
+                      data-animate="fade-rig"
+                      data-delay="1s">
+                      <img
+                        src={minhtam}
+                        alt="chure"
+                        className="img-fluid shadow"
+                        loading="lazy"
+                      />
+
 
                     </div>
                     <div className="col-6 m-0 animate"

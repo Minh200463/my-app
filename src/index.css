@@ -99,11 +99,11 @@ code {
 }
 
 .animate[data-animate="fade-rig"] {
-  transform: translateX(-30px);
+  transform: translateX(-50px);
   transition: opacity 3s ease, transform 3s ease;
 }
 .animate.is-visible[data-animate="fade-rig"] {
-  transform: translateX(0);
+  transform: translateX(10px);
 }
 
 .animate[data-animate="fade-left"] {
