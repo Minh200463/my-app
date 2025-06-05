@@ -13,9 +13,9 @@ import w26 from '../assets/images/26.jpg';
 import w23 from '../assets/images/23.jpg';
 import w13 from '../assets/images/13.jpg';
 import w25 from '../assets/images/25.jpg';
-import w30 from '../assets/images/30.jpg';
+import w24 from '../assets/images/24copy.jpg';
+import w22 from '../assets/images/22copy.jpg';
 import w32 from '../assets/images/32.jpg';
-import banner1 from '../assets/images/banner1.jpg';
 import tim from '../assets/images/tim.png';
 import weddingsong from '../assets/images/emdongy.mp3';
 import { motion, AnimatePresence } from 'framer-motion'
@@ -196,9 +196,8 @@ function Carousel() {
   }, []);
   return (
     <div className="relative">
-      <button className='bg-white' onClick={() => audioRef.current.play()} style={{ position: "absolute", top: 10, left: 10, zIndex: 9999 }}>
-        Bật nhạc
-      </button>
+      <button className='rounded rounded-1 border p-2' onClick={() => audioRef.current.play()} style={{ position: "absolute", top: 10, left: 10, zIndex: 9999 }}>
+        </button>
       {/* Audio element để phát nhạc */}
       <audio ref={audioRef} loop>
         <source src={weddingsong} type="audio/mpeg" />
@@ -331,8 +330,8 @@ function Carousel() {
                   style={{ backgroundImage: `url(${backgournd})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
                 >
                   <div className="row">
-                    <p className="col-6 m-0 animate"
-                      data-animate="fade-rig"
+                    <span className="col-6 m-0 animate"
+                      data-animate="fade-up"
                       data-delay="1s">
                       <img
                         src={minhtam}
@@ -340,9 +339,11 @@ function Carousel() {
                         className="img-fluid shadow"
                         loading="lazy"
                       />
-                    </p>
-                    <p className="col-6 m-0 animate"
-                      data-animate="fade-left"
+
+
+                    </span>
+                    <span className="col-6 m-0 animate"
+                      data-animate="fade-down"
                       data-delay="1s"
                     >
                       <img
@@ -352,7 +353,7 @@ function Carousel() {
                         loading="lazy"
 
                       />
-                    </p>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -388,7 +389,7 @@ function Carousel() {
           <div className="row mt-3 mb-4 d-flex justify-content-center text-center">
             <div className="col-4 align-content-around">
               <div className="animate"
-                data-animate="fade-rig"
+                data-animate="fade"
                 data-delay="1s">
                 <img
                   src={w13}
@@ -577,7 +578,7 @@ function Carousel() {
                 <div className="row-span-2 animate" data-animate="fade-rig"
                   data-delay="0.6s">
                   <motion.img
-                    src={w30}
+                    src={w23}
                     alt="Wedding 5" style={{ width: '90%' }}
                     variants={floatAnimation}
                     animate="float2"
@@ -587,14 +588,14 @@ function Carousel() {
                 <div className='flex flex-col animate' data-animate="fade-left"
                   data-delay="0.6s">
                   <motion.img
-                    src={w26}
+                    src={w24}
                     variants={floatAnimation}
                     animate="float2"
                     alt="Wedding 7"
                     className='h-auto object-cover rounded-lg translate-y-4'
                   />
                   <motion.img
-                    src={w23}
+                    src={w22}
                     animate="float3"
                     variants={floatAnimation}
                     alt="Wedding 8"
@@ -612,7 +613,7 @@ function Carousel() {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-sm"
             style={{
-              backgroundImage: `url(${banner1})`,
+              backgroundImage: `url(${w32})`,
             }}
           />
           {/* Overlay để làm mờ thêm nếu cần */}
